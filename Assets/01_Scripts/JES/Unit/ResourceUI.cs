@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 재료 아이템 Ui 총관리
 /// </summary>
-public class ResouceUI : MonoBehaviour
+public class ResourceUI : MonoBehaviour
 {
     private Image _imageCompo;
     private TextMeshProUGUI _countText;
