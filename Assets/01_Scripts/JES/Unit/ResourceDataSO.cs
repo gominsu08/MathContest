@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public enum ResourceType
 {
-    a,b,c,x,y,pie,squ,l,r,number
+    none,a,b,c,x,y,pie,squ,l,r,number
 }
 /// <summary>
 /// 재료 아이템 정보 SO
