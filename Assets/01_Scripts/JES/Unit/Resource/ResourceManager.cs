@@ -13,8 +13,8 @@ public class ResourceManager : MonoSingleton<ResourceManager>
     
     private ResourceType _keyType;
     
-    public bool _isSelect=false;
     private bool _isCursor=false;
+    public bool _isSelect=false;
     
     private Dictionary<ResourceType,Resource> _spriteDic = new Dictionary<ResourceType, Resource>();
 

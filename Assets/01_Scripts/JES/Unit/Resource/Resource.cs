@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 
 /// <summary>
@@ -14,10 +12,6 @@ public class Resource : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     private ResourceUI _uiCompo;
     public ResourceDataSO resourceData;
 
-    private bool _isPointer;
-
-    private Image _imageCompo;
-    
     public void Initalized(ResourceDataSO data)
     {
         resourceData = data;
@@ -25,9 +19,6 @@ public class Resource : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         
         _uiCompo = GetComponentInChildren<ResourceUI>();
         _uiCompo.Initialize(this);
-        
-
-        _imageCompo = GetComponent<Image>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
