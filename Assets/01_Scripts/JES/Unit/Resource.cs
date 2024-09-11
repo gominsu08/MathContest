@@ -20,12 +20,12 @@ public class Resource : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
     
     public void Initalized(ResourceDataSO data)
     {
+        resourceData = data;
         count.Value = data.count;
         
         _uiCompo = GetComponentInChildren<ResourceUI>();
         _uiCompo.Initialize(this);
         
-        resourceData = data;
 
         _imageCompo = GetComponent<Image>();
     }

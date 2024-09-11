@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class Piece : MonoBehaviour
 {
-    private Vector3 MousePos;
+    private Vector2 MousePos;
     
     public void Initialize(Sprite sprite)
     {
@@ -23,7 +23,7 @@ public class Piece : MonoBehaviour
 
     private void InputMouse()
     {
-        Vector3 inputPos = Input.mousePosition;
+        Vector2 inputPos = Input.mousePosition;
         MousePos = Camera.main.ScreenToWorldPoint(inputPos);
     }
 }

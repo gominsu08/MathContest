@@ -16,7 +16,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
     public bool _isSelect=false;
     private bool _isCursor=false;
     
-    private Dictionary<ResourceType,Sprite> _spriteDic = new Dictionary<ResourceType, Sprite>();
+    private Dictionary<ResourceType,Resource> _spriteDic = new Dictionary<ResourceType, Resource>();
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         {
             Resource resource = Instantiate(_resourcePrefab, transform);
             resource.Initalized(data);
-            _spriteDic.Add(data.type,data.sprite);
+            _spriteDic.Add(data.type,resource);
         }
     }
 
@@ -33,9 +33,13 @@ public class ResourceManager : MonoSingleton<ResourceManager>
     {
         if (Input.GetMouseButtonDown(0) && _isCursor)
         {
-            _isSelect = true;
-            Piece piece = Instantiate(piecePrefab);
-            piece.Initialize(_spriteDic[_keyType]);
+            if (_spriteDic[_keyType].count.Value > 0) // 개수가 0개 초과인지
+            {
+                _isSelect = true; // 선택됨
+                Piece piece = Instantiate(piecePrefab);
+                piece.Initialize(_spriteDic[_keyType].resourceData.sprite);
+                _spriteDic[_keyType].count.Value--;
+            }
         }
         else if (Input.GetMouseButtonUp(0) && _isSelect)
         {

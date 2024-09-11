@@ -12,7 +12,7 @@ public class ResourceUI : MonoBehaviour
     private TextMeshProUGUI _countText;
 
     private Color _fullColor = new Color(255, 255, 255, 255);
-    private Color _emptyColor = new Color(90, 90, 90, 255);
+    private Color _emptyColor = new Color(255, 255, 255, 100);
     public void Initialize(Resource resouce)
     {
         _imageCompo = GetComponentInChildren<Image>();
@@ -28,7 +28,7 @@ public class ResourceUI : MonoBehaviour
     {
         _countText.text = $"{next}";
         
-        if (next <= 0)
+        if (next > 0)
             _imageCompo.color = _fullColor;
         else
             _imageCompo.color = _emptyColor;
