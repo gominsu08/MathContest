@@ -15,3 +15,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: cb8537b99a267a442b8260030a870e0e, type: 3}
   name: third
   index: 2
+  emptyManager: {fileID: 31261426042845507, guid: cb70d3253070878428e33c9084c43597, type: 3}

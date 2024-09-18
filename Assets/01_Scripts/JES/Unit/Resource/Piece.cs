@@ -5,7 +5,7 @@ using UnityEngine;
 /// 재료 조각 클래스
 /// </summary>
 public class Piece : MonoBehaviour
-{
+{ 
     private Vector2 MousePos;
     
     public void Initialize(Sprite sprite)
