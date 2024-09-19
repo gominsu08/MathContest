@@ -15,4 +15,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: a06366b679ee81146b13c66fd75013b9, type: 3}
   name: def
   index: 1
-  emptyManager: {fileID: 7522301764140704011, guid: 4e617b93179674f4399a68bb34d876da, type: 3}
+  emptyManagerPrefab: {fileID: 7522301764140704011, guid: 4e617b93179674f4399a68bb34d876da, type: 3}
+  emptyManager: {fileID: 0}

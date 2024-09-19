@@ -33,6 +33,11 @@ public class ResourceManager : MonoSingleton<ResourceManager>
 
     private void Update()
     {
+        DragAndDropSys();
+    }
+
+    private void DragAndDropSys()
+    {
         if (Input.GetMouseButtonDown(0) && _isCursor)
         {
             if (_spriteDic[_keyType].count.Value > 0) // 개수가 0개 초과인지
@@ -49,13 +54,22 @@ public class ResourceManager : MonoSingleton<ResourceManager>
             {
                 _selectedPiece.SettingPiece(_spriteDic[_keyType].resourceData);
                 UpgradeManager.Instance.EmptyCheck();
-                Destroy(_curPiece.gameObject);
-                _isSelect=false;
-                ExitPointer();
-                //그 커서가 빈공간에 올라가있을때 
-                //아 아니지 그 
+                _spriteDic[_keyType].resourceData.count--;
+                DropResource();
+            }
+            else
+            {
+                _spriteDic[_keyType].count.Value++;
+                DropResource();
             }
         }
+    }
+
+    private void DropResource()
+    {
+        Destroy(_curPiece.gameObject);
+        _isSelect=false;
+        ExitPointer();
     }
     public void ExitPointer()
     {
@@ -71,10 +85,9 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         _isCursor = true;
         _keyType = keyType;
     }
-
     public void EnterEmptyPointer(EmptyPiece piece)
     {
-        _selectedPiece = piece; // 여기에서 커서가 올라가있는 빈 piece 넣어줍니다
+        _selectedPiece = piece;
         _inCurEmpty = true;
     }
     public void ExitEmptyPointer()

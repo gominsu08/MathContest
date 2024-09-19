@@ -15,4 +15,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2000e8d0b7789184d94e90eaa5e2aa13, type: 3}
   name: Human
   index: 5
-  emptyManager: {fileID: 7522301764140704011, guid: 4e617b93179674f4399a68bb34d876da, type: 3}
+  emptyManagerPrefab: {fileID: 7522301764140704011, guid: 4e617b93179674f4399a68bb34d876da, type: 3}
+  emptyManager: {fileID: 0}

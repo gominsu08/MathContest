@@ -15,4 +15,5 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: be028a56e9d4dd14f855beb00b8bcda5, type: 3}
   name: Trex
   index: 4
-  emptyManager: {fileID: 31261426042845507, guid: cb70d3253070878428e33c9084c43597, type: 3}
+  emptyManagerPrefab: {fileID: 31261426042845507, guid: cb70d3253070878428e33c9084c43597, type: 3}
+  emptyManager: {fileID: 0}
