@@ -24,11 +24,19 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private void OnDisable()
     {
+        Reset();
+    }
+
+    public void Reset(bool isUpgrade = false)
+    {
         _imageCompo = transform.Find("Visual").GetComponent<Image>();
         _imageCompo.sprite = null;
+        if (_pieceType != ResourceType.none&&!isUpgrade)
+        {
+            _resourceManager.ResourceCountBack(_pieceType);
+        }
         _pieceType = ResourceType.none;
         _inCursor = false;
-        Debug.Log($"초기화 : {_pieceType}");
     }
 
     public void SettingPiece(ResourceDataSO resourceData)
@@ -46,9 +54,8 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if(!_resourceManager._isSelect) return;
         
-        _resourceManager.EnterEmptyPointer(this); // 이거요
+        _resourceManager.EnterEmptyPointer(this);
         _inCursor = true;
-        // EMptyPiece위에 있을때요 네네
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -36,6 +36,13 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         DragAndDropSys();
     }
 
+
+
+    public void ResourceCountBack(ResourceType type)
+    {
+        _spriteDic[type].resourceData.count++;
+        _spriteDic[type].count.Value++;
+    }
     private void DragAndDropSys()
     {
         if (Input.GetMouseButtonDown(0) && _isCursor)
