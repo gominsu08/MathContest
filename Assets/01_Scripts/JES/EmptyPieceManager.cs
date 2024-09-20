@@ -26,11 +26,11 @@ public class EmptyPieceManager : MonoBehaviour
         return true;
     }
 
-    public void ResetPiece()
+    public void ResetPiece(bool value =false)
     {
         foreach (var piece in emptyPieces)
         {
-            piece.Reset();
+            piece.Reset(value);
         }
     }
 }

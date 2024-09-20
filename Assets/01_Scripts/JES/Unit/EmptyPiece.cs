@@ -9,7 +9,7 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private ResourceManager _resourceManager;
 
     private bool _inCursor=false;
-    
+    private bool _isEmpty = true;
     private Image _imageCompo;
 
     [SerializeField] private ResourceType _myType;
@@ -31,10 +31,12 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         _imageCompo = transform.Find("Visual").GetComponent<Image>();
         _imageCompo.sprite = null;
+        _isEmpty = true;
         if (_pieceType != ResourceType.none&&!isUpgrade)
         {
             _resourceManager.ResourceCountBack(_pieceType);
         }
+        
         _pieceType = ResourceType.none;
         _inCursor = false;
     }
@@ -43,6 +45,7 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         _imageCompo.sprite = resourceData.sprite;
         _pieceType = resourceData.type;
+        _isEmpty = false;
     }
 
     public bool IsEnumEqual()
@@ -52,7 +55,7 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!_resourceManager._isSelect) return;
+        if(!_resourceManager._isSelect||!_isEmpty) return;
         
         _resourceManager.EnterEmptyPointer(this);
         _inCursor = true;

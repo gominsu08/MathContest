@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeManager : MonoSingleton<UpgradeManager>
 {
@@ -14,7 +15,9 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     
     public event Action<int, bool> OnChangeEvent; // 인덱스 값이 바뀐 이벤트
     public int index = 0; // 현재 선택 인덱스 값
-    
+
+    [Header("Upgrade Menu")] 
+    [SerializeField] private GameObject _btnPanel;
     private void Awake()
     {
         foreach (UnitUpgradeData upgradeData in _dataList)
@@ -36,12 +39,7 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     {
         if (_dataList[index].emptyManager.CheckAnswer())
         {
-            //성공처리
-            Debug.Log("성공");
-        }
-        else
-        {
-            Debug.Log("실패");
+            _btnPanel.SetActive(false);
         }
     }
     public void LeftBtnClick()
@@ -65,5 +63,18 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
         
         if(index==5)
             _rBtn.SetActive(false);
+    }
+
+    public void UpgradeBtnClick()
+    {
+        _dataList[index].emptyManager.ResetPiece(true);
+        _btnPanel.SetActive(true);
+        //업그레이드 해줘야됨
+        //유닛업그레이드 데이터에다가 유닛 데이터 SO를 만들어 넣어서 그거 건들여주면 될듯.
+    }
+
+    public void ResetBtn()
+    {
+        _dataList[index].emptyManager.ResetPiece();
     }
 }
