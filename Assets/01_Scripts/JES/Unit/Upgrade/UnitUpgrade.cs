@@ -12,6 +12,8 @@ public class UnitUpgrade : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _nameText; // 이름 텍스트
 
     private float _paddingValue; // 패딩 값
+
+    private bool _isLimit;
     
     private EmptyPieceManager _emptyPieceManager;
     public void Initalize(UpgradeManager manager, UnitUpgradeData data)
@@ -20,16 +22,18 @@ public class UnitUpgrade : MonoBehaviour
         
         _unitData = data; // 데이터 설정
         _imageCompo.sprite = _unitData.sprite; // 이미지 데이터의 스프라이트로
-        _nameText.text = _unitData.name; // 텍스트 이름으로 설정
+        _nameText.text = $"Lv.{_unitData.level} {_unitData.name}"; // 텍스트 이름으로 설정
         
         manager.OnChangeEvent += HandleChangeEvent; // 이벤트 구독
         _panel.SetActive(manager.index!=_unitData.index); // 패널 인덱스에 맞춰 끄고키기
         
         _paddingValue = manager._xPadding; // 패딩 설정
 
+        _isLimit = _unitData.level == 50;
+        
         _emptyPieceManager = Instantiate(_unitData.emptyManagerPrefab, transform.parent.parent);
         _emptyPieceManager.gameObject.SetActive(manager.index==_unitData.index);
-        
+        _emptyPieceManager.Initalize(_isLimit);
         _unitData.emptyManager = _emptyPieceManager;
     }
 

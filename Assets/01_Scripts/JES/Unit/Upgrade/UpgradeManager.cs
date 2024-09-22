@@ -69,8 +69,7 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     {
         _dataList[index].emptyManager.ResetPiece(true);
         _btnPanel.SetActive(true);
-        //업그레이드 해줘야됨
-        //유닛업그레이드 데이터에다가 유닛 데이터 SO를 만들어 넣어서 그거 건들여주면 될듯.
+        _dataList[index].unitData.UnitUpgrade();
     }
 
     public void ResetBtn()

@@ -5,13 +5,14 @@ using UnityEngine;
 public class EmptyPieceManager : MonoBehaviour
 {
     private List<EmptyPiece> emptyPieces = new List<EmptyPiece>();
-
-    private void Start()
+    [SerializeField] private GameObject maxPanel;
+    public void Initalize(bool isLimit)
     {
         foreach (var piece in GetComponentsInChildren<EmptyPiece>())
         {
             emptyPieces.Add(piece);
         }
+        maxPanel.SetActive(isLimit);
     }
 
     public bool CheckAnswer()
