@@ -6,7 +6,7 @@ public class DamageCaster : MonoBehaviour
 {
     public ContactFilter2D filter;
     public float damageRadius;
-    public int detectCount = 1; //¸î¸¶¸®±îÁö µ¥¹ÌÁö
+    public int detectCount = 1; //ï¿½î¸¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     private Collider2D[] _colliders;
 
