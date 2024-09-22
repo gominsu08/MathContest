@@ -14,9 +14,10 @@ public class Health : MonoBehaviour
     private int _currentHealth;
     private Agent _owner;
 
-    public void Initialize(Agent owner)
+    public void Initialize(Agent owner,int health)
     {
         _owner = owner;
+        _maxHealth = health;
         ResetHealth();
     }
 

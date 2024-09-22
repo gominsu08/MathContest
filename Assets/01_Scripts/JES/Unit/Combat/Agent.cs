@@ -3,13 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Agent : MonoBehaviour
+public class Agent : MonoBehaviour
 {
     [Header("AttackSetting")] 
-    [SerializeField] protected int _range;
+    [SerializeField] protected float _range;
     [SerializeField] protected float _attackCoolTime;
     [SerializeField] protected float _speed;
-    [SerializeField] protected int _cost;
     [SerializeField] protected int _damage;
     
     
@@ -20,7 +19,7 @@ public abstract class Agent : MonoBehaviour
     public Health HealthComp { get;protected set; }
     public AgentMovement MovementComp { get;protected set; }
     #endregion
-    private void Start()
+    protected virtual void Start()
     {
         DamangeCasterCompo = transform.Find("DamageCaster").GetComponent<DamageCaster>();
         HealthComp = GetComponent<Health>();
@@ -34,8 +33,11 @@ public abstract class Agent : MonoBehaviour
         // 레이가 플레이어를 감지했는지 여부를 불값으로 반환
         return hit.collider != null;
     }
-    
-    public abstract void Attack();
+
+    public virtual void Attack()
+    {
+        //구현해야댐
+    }
     
     
     #if UNITY_EDITOR
