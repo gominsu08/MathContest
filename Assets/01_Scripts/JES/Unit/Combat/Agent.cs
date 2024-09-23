@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Agent : MonoBehaviour
+public class Agent : MonoBehaviour, IPoolable
 {
     [Header("AttackSetting")] 
     [SerializeField] protected float _range;
@@ -107,5 +107,11 @@ public class Agent : MonoBehaviour
     }
 
     #endif
-    
+
+    [SerializeField] private string _poolName;
+    public string PoolName => _poolName;
+    public GameObject ObjectPrefab => gameObject;
+    public void ResetItem()
+    {
+    }
 }
