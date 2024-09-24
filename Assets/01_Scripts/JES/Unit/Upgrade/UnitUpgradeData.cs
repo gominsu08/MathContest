@@ -8,7 +8,7 @@ using UnityEngine;
 public class UnitUpgradeData : ScriptableObject
 {
     public Sprite sprite;//유닛 스프라이트
-    public String name; // 이름
+    public string name; // 이름
     public int level=1;
     public int cost;
     public string poolName;
@@ -19,4 +19,10 @@ public class UnitUpgradeData : ScriptableObject
     
     public EmptyPieceManager emptyManagerPrefab;
     public EmptyPieceManager emptyManager;
+
+    public void LevelUp()
+    {
+        level++;
+        unitData.UnitUpgrade();
+    }
 }

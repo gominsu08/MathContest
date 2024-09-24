@@ -25,6 +25,7 @@ public class UnitUpgrade : MonoBehaviour
         _nameText.text = $"Lv.{_unitData.level} {_unitData.name}"; // 텍스트 이름으로 설정
         
         manager.OnChangeEvent += HandleChangeEvent; // 이벤트 구독
+        manager.OnLevelUpEvent += HandleLevelUpEvent;
         _panel.SetActive(manager.index!=_unitData.index); // 패널 인덱스에 맞춰 끄고키기
         
         _paddingValue = manager._xPadding; // 패딩 설정
@@ -35,6 +36,14 @@ public class UnitUpgrade : MonoBehaviour
         _emptyPieceManager.gameObject.SetActive(manager.index==_unitData.index);
         _emptyPieceManager.Initalize(_isLimit);
         _unitData.emptyManager = _emptyPieceManager;
+    }
+
+    private void HandleLevelUpEvent(int arg1, int arg2)
+    {
+        if (_unitData.index == arg1)
+        {
+            _nameText.text = $"Lv.{arg2} {_unitData.name}";
+        }
     }
 
     private void HandleChangeEvent(int index, bool _isRight) // 인덱스 값이 바뀔때마다 실행될 함수

@@ -10,7 +10,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
     [SerializeField] private ResourceSOList dataList;
     [SerializeField] private Resource _resourcePrefab;
     [SerializeField] private Piece piecePrefab;
-    
+    public Sprite nullSprite;
     private ResourceType _keyType;
     
     private bool _isCursor=false;
@@ -50,7 +50,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
             if (_spriteDic[_keyType].count.Value > 0) // 개수가 0개 초과인지
             {
                 _isSelect = true; // 선택됨
-                _curPiece = Instantiate(piecePrefab);
+                _curPiece = Instantiate(piecePrefab,transform.parent);
                 _curPiece.Initialize(_spriteDic[_keyType].resourceData.sprite);
                 _spriteDic[_keyType].count.Value--;
             }

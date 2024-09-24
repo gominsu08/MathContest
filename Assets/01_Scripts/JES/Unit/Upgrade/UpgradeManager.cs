@@ -7,13 +7,14 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
 {
     [SerializeField] private List<UnitUpgradeData> _dataList; //데이터 리스트
     [SerializeField] private UnitUpgrade _unitPrefab; // 유닛 칸 프리팹
-
+    
     public float _xPadding; // x좌표 패딩값 - 현재 500
     private float curPadding; // 현재 얼마나 패딩했는지.
     
     [SerializeField] private GameObject _lBtn, _rBtn;//좌우 버튼
     
     public event Action<int, bool> OnChangeEvent; // 인덱스 값이 바뀐 이벤트
+    public event Action<int,int> OnLevelUpEvent; // 인덱스 값이 바뀐 이벤트
     public int index = 0; // 현재 선택 인덱스 값
 
     [Header("Upgrade Menu")] 
@@ -69,11 +70,13 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     {
         _dataList[index].emptyManager.ResetPiece(true);
         _btnPanel.SetActive(true);
-        _dataList[index].unitData.UnitUpgrade();
+        _dataList[index].LevelUp();
+        OnLevelUpEvent?.Invoke(index, _dataList[index].level);
     }
 
     public void ResetBtn()
     {
         _dataList[index].emptyManager.ResetPiece();
+        _btnPanel.SetActive(true);
     }
 }

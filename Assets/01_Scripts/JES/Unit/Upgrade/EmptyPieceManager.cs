@@ -13,6 +13,7 @@ public class EmptyPieceManager : MonoBehaviour
             emptyPieces.Add(piece);
         }
         maxPanel.SetActive(isLimit);
+        transform.localPosition = new Vector3(0, 70, 0);
     }
 
     public bool CheckAnswer()

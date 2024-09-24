@@ -10,16 +10,16 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     private bool _inCursor=false;
     private bool _isEmpty = true;
-    private Image _imageCompo;
-
+    [SerializeField] private Image _imageCompo;
+    [SerializeField] private Sprite _nullSprite;
+    
     [SerializeField] private ResourceType _myType;
     private ResourceType _pieceType = ResourceType.none;
     
     private void Start()
     {
         _resourceManager = ResourceManager.Instance;
-        
-        _imageCompo = transform.Find("Visual").GetComponent<Image>();
+        _imageCompo.sprite = _nullSprite;
     }
 
     private void OnDisable()
@@ -29,8 +29,8 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void Reset(bool isUpgrade = false)
     {
-        _imageCompo = transform.Find("Visual").GetComponent<Image>();
-        _imageCompo.sprite = null;
+        _imageCompo.sprite = _nullSprite;
+        
         _isEmpty = true;
         if (_pieceType != ResourceType.none&&!isUpgrade)
         {

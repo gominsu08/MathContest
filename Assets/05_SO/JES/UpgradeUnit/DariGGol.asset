@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a06366b679ee81146b13c66fd75013b9, type: 3}
   name: def
-  index: 1
   level: 3
+  cost: 0
+  poolName: 
+  _spawnCoolTime: 0
   unitData: {fileID: 11400000, guid: eeb0e8d42ece8c840b3220c138b58c4a, type: 2}
-  emptyManagerPrefab: {fileID: 7522301764140704011, guid: 4e617b93179674f4399a68bb34d876da, type: 3}
+  index: 1
+  emptyManagerPrefab: {fileID: 31261426042845507, guid: 57a149d1a85c17c4eb1e7b3939d55587, type: 3}
   emptyManager: {fileID: 0}
