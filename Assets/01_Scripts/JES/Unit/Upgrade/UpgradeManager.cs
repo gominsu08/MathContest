@@ -42,6 +42,10 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
         {
             _btnPanel.SetActive(false);
         }
+        else
+        {
+            _btnPanel.SetActive(true);
+        }
     }
     public void LeftBtnClick()
     {

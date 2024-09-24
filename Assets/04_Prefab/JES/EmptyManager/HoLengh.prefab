@@ -457,6 +457,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4942612496342405854}
     m_Modifications:
     - target: {fileID: 1030571564692233647, guid: 8394bac7409281a43982fab403944ec3, type: 3}
+      propertyPath: _answer
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030571564692233647, guid: 8394bac7409281a43982fab403944ec3, type: 3}
       propertyPath: _myType
       value: 10
       objectReference: {fileID: 0}
@@ -880,6 +884,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4942612496342405854}
     m_Modifications:
+    - target: {fileID: 1030571564692233647, guid: 8394bac7409281a43982fab403944ec3, type: 3}
+      propertyPath: _answer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1030571564692233647, guid: 8394bac7409281a43982fab403944ec3, type: 3}
       propertyPath: _myType
       value: 10

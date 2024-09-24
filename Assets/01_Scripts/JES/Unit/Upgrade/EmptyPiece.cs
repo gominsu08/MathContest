@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] private ResourceType _myType;
     private ResourceType _pieceType = ResourceType.none;
     
+    [SerializeField] private TMP_InputField _inputField;
+    [SerializeField] private int _answer;
     private void Start()
     {
         _resourceManager = ResourceManager.Instance;
@@ -38,18 +41,38 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         }
         
         _pieceType = ResourceType.none;
+        _inputField.gameObject.SetActive(false);
         _inCursor = false;
     }
 
     public void SettingPiece(ResourceDataSO resourceData)
     {
-        _imageCompo.sprite = resourceData.sprite;
         _pieceType = resourceData.type;
         _isEmpty = false;
-    }
 
+        if (_pieceType == ResourceType.number)
+        {
+            _inputField.gameObject.SetActive(true);
+        }
+        else
+        {
+            _imageCompo.sprite = resourceData.sprite;
+        }
+    }
+    public void InputFieldChage()
+    {
+        UpgradeManager.Instance.EmptyCheck();
+    }
     public bool IsEnumEqual()
     {
+        if (_pieceType == ResourceType.number && _myType == ResourceType.number)
+        {
+            if(int.TryParse(_inputField.text,out int num))
+            {
+                return num == _answer;
+            }
+            return false;
+        }
         return _myType == _pieceType;
     }
 

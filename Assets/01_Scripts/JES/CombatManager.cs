@@ -25,6 +25,11 @@ public class CombatManager : MonoSingleton<CombatManager>
         OnLevelChangeEvent?.Invoke(_coinList[_level].cost,_level);
     }
 
+    private void Start()
+    {
+        OnLevelChangeEvent?.Invoke(_coinList[_level].cost,_level);
+    }
+
     private void Update()
     {
         CoinUpdate();

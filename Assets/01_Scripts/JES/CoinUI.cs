@@ -9,7 +9,7 @@ public class CoinUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _coinText,levelUpCostTxt,levelText;
     
     
-    private void Start()
+    private void OnEnable()
     {
         CombatManager.Instance.OnCoinChageEvent += HandleCoinChange;
         CombatManager.Instance.OnLevelChangeEvent += HandleLevelChange;
