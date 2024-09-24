@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -19,6 +20,8 @@ public class Resource : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
         
         _uiCompo = GetComponentInChildren<ResourceUI>();
         _uiCompo.Initialize(this);
+        
+        GetComponent<Image>().sprite = data.sprite;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

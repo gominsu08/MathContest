@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807feafe7966f1440b31f5b65dd27581, type: 3}
   m_Name: pie
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 47c18a1fbe45f0648834cfe54c49c0f4, type: 3}
+  sprite: {fileID: 1432106424, guid: 41b040c6fe7f92141a0b62fc8bacb062, type: 3}
   type: 6
   count: 10
