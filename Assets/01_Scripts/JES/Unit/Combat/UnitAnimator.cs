@@ -6,6 +6,7 @@ public class UnitAnimator : MonoBehaviour
     private readonly int moveHash = Animator.StringToHash("Move");
     private readonly int attackHash = Animator.StringToHash("Attack");
     private readonly int idleHash = Animator.StringToHash("Idle");
+    private readonly int deadHash = Animator.StringToHash("Dead");
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Agent _agent;
@@ -14,6 +15,7 @@ public class UnitAnimator : MonoBehaviour
         _agent = agent;
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        MoveAniSet();
     }
 
     public void MoveAniSet()
@@ -44,5 +46,10 @@ public class UnitAnimator : MonoBehaviour
     private void AnimationEndTrigger()
     {
         _agent.AniEndTrigger();
+    }
+
+    public void DeadAniSet()
+    {
+        _animator.SetTrigger(deadHash);
     }
 }

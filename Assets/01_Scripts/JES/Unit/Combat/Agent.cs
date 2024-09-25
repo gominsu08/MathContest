@@ -10,7 +10,6 @@ public class Agent : MonoBehaviour, IPoolable
     [SerializeField] protected float _attackCoolTime;
     [SerializeField] protected float _speed;
     [SerializeField] protected int _damage;
-    [SerializeField] protected float knockPower;
 
 
     protected Transform _targetTrm;
@@ -20,6 +19,9 @@ public class Agent : MonoBehaviour, IPoolable
     public bool AnimationEndTrigger { get; set; } = false;
     private bool _isMove = false;
     
+    private bool _isDead = false;
+    protected int _pcLayer;
+    protected int _deadLayer;
     #region Component
     public DamageCaster DamangeCasterCompo { get;protected set; }
     public Health HealthComp { get;protected set; }
@@ -37,12 +39,18 @@ public class Agent : MonoBehaviour, IPoolable
         AnimatorComp.Initalize(this);
         MovementComp.IniaLize(_speed);
         MovementSet(true);
+        _deadLayer = LayerMask.NameToLayer("DeadBody");
+        _pcLayer = gameObject.layer;
     }
 
     private void FixedUpdate()
     {
-        if(AnimationEndTrigger) return;
-
+        if (AnimationEndTrigger && _isDead)
+        {
+            DeadAniEnd();
+        }
+        if(AnimationEndTrigger||_isDead) return;
+        
         Collider2D spotTarget = TargetDetect();
         if (spotTarget)
         {
@@ -62,6 +70,19 @@ public class Agent : MonoBehaviour, IPoolable
         }
     }
 
+    public void DeadEnter()
+    {
+        gameObject.layer = _deadLayer;
+        _isDead = true;
+        AnimatorComp.DeadAniSet();
+        AnimationEndTrigger = true;
+    }
+
+    public void DeadAniEnd()
+    {
+        PoolManager.Instance.Push(this);
+    }
+    
     private void MovingSet()
     {
         MovementSet(true);
@@ -113,5 +134,7 @@ public class Agent : MonoBehaviour, IPoolable
     public GameObject ObjectPrefab => gameObject;
     public void ResetItem()
     {
+        _isDead = false;
+        gameObject.layer = _pcLayer;
     }
 }

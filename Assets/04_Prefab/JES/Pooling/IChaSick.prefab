@@ -97,8 +97,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015501082, y: 0.0021010041}
-  m_Size: {x: 0.9581485, y: 1.3747181}
+  m_Offset: {x: -0.34, y: 0.0021010041}
+  m_Size: {x: 0.66, y: 1.3747181}
   m_Direction: 0
 --- !u!114 &6608176453973460854
 MonoBehaviour:
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dd7d8c365a5884f8d67afd650222bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 2.46
+  _range: 0.92
   _attackCoolTime: 3
   _speed: 0
   _damage: 0
@@ -228,7 +228,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 440532278, guid: 4eda2287bdd678442ae356ed918e15c3, type: 3}
+  m_Sprite: {fileID: -755978704, guid: f0fa7d1aa8a147e45adf603e279f4cbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -249,7 +249,7 @@ Animator:
   m_GameObject: {fileID: 3027301218424617627}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6418422cde315c1469a13da6f9a3a91e, type: 2}
+  m_Controller: {fileID: 9100000, guid: e0579500bb576424ab1a17f6a530bcd3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -286,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.y
@@ -326,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8794856774554194857, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: damageRadius
-      value: 0.8
+      value: 0.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
