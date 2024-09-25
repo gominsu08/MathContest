@@ -17,16 +17,30 @@ public class Bomb : MonoBehaviour, IPoolable
     public float height = 5f;       // 포물선의 최고점 높이
     public float duration = 2f;     // 이동 시간
     public int resolution = 20;     // 경로를 구성하는 점의 수 (포물선의 매끄러움)
-
-    public void Initalize(Transform _target)
+    
+    private Tween _tween;
+    private DamageCaster _damageCaster;
+    private int _damage;
+    public void Initalize(Transform _target, int damage)
     {
         targetPoint = _target;
         // 포물선 경로 계산
         Vector3[] path = CalculateParabolicPath(transform.position, targetPoint.position, height, resolution);
 
         // DoPath를 이용해 경로를 따라 이동
-        transform.DOPath(path, duration, PathType.CatmullRom)
+        _tween = transform.DOPath(path, duration, PathType.CatmullRom)
             .SetEase(Ease.Linear);  // 선형 이동
+        
+        _damageCaster = transform.Find("DamageCaster").GetComponent<DamageCaster>();
+        _damage = damage;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        _tween.Kill();
+        _damageCaster.CastDamage(_damage);
+        PoolManager.Instance.Push(this);
     }
 
     // 포물선 경로 계산 함수
