@@ -9,7 +9,7 @@ public class Memo : MonoBehaviour
 {
     private NotifyValue<Vector3> mouseNotify;
     private LineRenderer _currentline;
-    [HideInInspector] public List<LineRenderer> lineList;
+    [HideInInspector] public Stack<LineRenderer> lineStack;
     private List<Vector3> _memoList;
     private Vector3 _memoMaxSize;
     private Vector3 _memoMinSize;
@@ -19,9 +19,13 @@ public class Memo : MonoBehaviour
     private void Awake()
     {
         mouseNotify = new NotifyValue<Vector3>();
-        lineList = new List<LineRenderer>();
-        mouseNotify.OnValueChanged += HandleOnDrawLine;
+        lineStack = new Stack<LineRenderer>();
         _memoList = new List<Vector3>();
+    }
+
+    private void OnEnable()
+    {
+        mouseNotify.OnValueChanged += HandleOnDrawLine;
         
         Bounds bounds = GetComponent<Collider2D>().bounds;
         
@@ -40,7 +44,7 @@ public class Memo : MonoBehaviour
         
         _currentline = obj.GetComponent<LineRenderer>();
         _currentline.colorGradient = _panColor;
-        lineList.Add(_currentline);
+        lineStack.Push(_currentline);
     }
 
     private void OnMouseDrag()
@@ -65,5 +69,24 @@ public class Memo : MonoBehaviour
         _memoList.Add(pos);
         _currentline.positionCount = _memoList.Count;
         _currentline.SetPositions(_memoList.ToArray());
+    }
+
+    public void DeleteLine()
+    {
+        if (lineStack.Count > 0)
+        {
+            LineRenderer line = lineStack.Pop();
+            Destroy(line.gameObject);
+        }
+    }
+
+    public void DeleteAllLine()
+    {
+        int count = lineStack.Count;
+        for (int i = 0; i < count; i++)
+        {
+            var line = lineStack.Pop();
+            Destroy(line.gameObject);
+        }
     }
 }
