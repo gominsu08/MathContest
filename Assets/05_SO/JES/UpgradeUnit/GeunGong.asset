@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 2
   cost: 30
   poolName: GeunGong
-  _spawnCoolTime: 0
+  _spawnCoolTime: 5
   unitData: {fileID: 11400000, guid: ff5507df38af742458481bd2ad320da5, type: 2}
   index: 4
   emptyManagerPrefab: {fileID: 7522301764140704011, guid: 1c0e1c1d93b069443ad1072599574d21, type: 3}
