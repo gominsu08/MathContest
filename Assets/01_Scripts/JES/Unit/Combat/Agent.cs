@@ -50,9 +50,9 @@ public class Agent : MonoBehaviour, IPoolable
             DeadAniEnd();
         }
         if(AnimationEndTrigger||_isDead) return;
-        
+        Debug.Log("Fixed update");
         Collider2D spotTarget = TargetDetect();
-        if (spotTarget)
+        if (spotTarget!=null)
         {
             _targetTrm = spotTarget.transform;
             if (_lastAttackTime + _attackCoolTime < Time.time)
@@ -64,7 +64,7 @@ public class Agent : MonoBehaviour, IPoolable
                 AnimatorComp.IdleAniSet();
             }
         }
-        else if(!spotTarget&&!_isMove&&_lastAttackTime + _attackCoolTime < Time.time)
+        else if(spotTarget==null&&!_isMove&&_lastAttackTime + _attackCoolTime < Time.time)
         {
             MovingSet();
         }

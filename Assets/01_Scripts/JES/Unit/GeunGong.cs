@@ -10,8 +10,6 @@ public class GeunGong : PlayerUnit
     {
         Bomb bomb = PoolManager.Instance.Pop(_bombPoolname) as Bomb;
         bomb.transform.position = bombTrm.position;
-        bomb.Initalize(_targetTrm);
-        
-        bombTrm.DOLocalMove(new Vector2(-0.16f,-0.56f),0.1f).SetLoops(2, LoopType.Yoyo);
+        bomb.Initalize(_targetTrm,_damage);
     }
 }
