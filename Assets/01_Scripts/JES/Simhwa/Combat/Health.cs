@@ -27,13 +27,10 @@ public class Health : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
-    public void TakeDamage(int amount, Vector2 normal, Vector2 point, float knockbackPower)
+    public void TakeDamage(int amount)
     {
         _currentHealth -= amount;
         OnHitEvent?.Invoke();
-        //normal과 point, 넉백 등은 차후에 여기서 사용합니다.
-
-        if(knockbackPower > 0)
 
         if(_currentHealth <= 0)
         {
