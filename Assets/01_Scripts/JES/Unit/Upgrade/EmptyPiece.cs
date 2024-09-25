@@ -41,6 +41,7 @@ public class EmptyPiece : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         }
         
         _pieceType = ResourceType.none;
+        _inputField.text = "";
         _inputField.gameObject.SetActive(false);
         _inCursor = false;
     }

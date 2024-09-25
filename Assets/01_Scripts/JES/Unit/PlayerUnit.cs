@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerUnit : Agent
 {
     [SerializeField] private UnitDataSO _unitData;
-
+    
     protected override void Start()
     {
         base.Start();
@@ -17,11 +17,5 @@ public class PlayerUnit : Agent
         _speed = _unitData.speed;
         HealthComp.Initialize(this,true,_unitData.health);
         MovementComp.IniaLize(_speed);
-    }
-
-    public override void Attack()
-    {
-        base.Attack();
-        DamangeCasterCompo.CastDamage(_damage, knockPower);
     }
 }

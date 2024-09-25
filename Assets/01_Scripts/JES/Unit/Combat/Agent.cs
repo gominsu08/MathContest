@@ -13,7 +13,7 @@ public class Agent : MonoBehaviour, IPoolable
     [SerializeField] protected float knockPower;
 
 
-
+    protected Transform _targetTrm;
     private float _lastAttackTime;
     [SerializeField] protected LayerMask _targetLayer;
 
@@ -43,10 +43,10 @@ public class Agent : MonoBehaviour, IPoolable
     {
         if(AnimationEndTrigger) return;
 
-        bool spotTarget = TargetDetect();
+        Collider2D spotTarget = TargetDetect();
         if (spotTarget)
         {
-            
+            _targetTrm = spotTarget.transform;
             if (_lastAttackTime + _attackCoolTime < Time.time)
             {
                 AttackStart();
@@ -81,12 +81,12 @@ public class Agent : MonoBehaviour, IPoolable
         _isMove = isMove;
     }
 
-    private bool TargetDetect()
+    private Collider2D TargetDetect()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, _range, _targetLayer);
 
         // 레이가 플레이어를 감지했는지 여부를 불값으로 반환
-        return hit.collider != null;
+        return hit.collider != null? hit.collider : null;
     }
     public void AniEndTrigger()
     {
