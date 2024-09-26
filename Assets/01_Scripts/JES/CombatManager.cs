@@ -53,7 +53,7 @@ public class CombatManager : MonoSingleton<CombatManager>
 
     public void CoinLevelUp()
     {
-        if (_coinList[_level].cost <= _coin)
+        if (CoinCheck(_coinList[_level].cost))
         {
             _level++;
             _maxCoin = _coinList[_level]._maxCoin;

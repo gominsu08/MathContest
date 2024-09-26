@@ -50,7 +50,7 @@ public class Agent : MonoBehaviour, IPoolable
             DeadAniEnd();
         }
         if(AnimationEndTrigger||_isDead) return;
-        Debug.Log("Fixed update");
+        
         Collider2D spotTarget = TargetDetect();
         if (spotTarget!=null)
         {
@@ -111,6 +111,7 @@ public class Agent : MonoBehaviour, IPoolable
     }
     public void AniEndTrigger()
     {
+        AnimatorComp.IdleAniSet();
         AnimationEndTrigger = false;
         _lastAttackTime = Time.time;
     }
