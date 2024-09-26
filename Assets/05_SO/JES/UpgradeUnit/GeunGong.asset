@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: be028a56e9d4dd14f855beb00b8bcda5, type: 3}
   name: Trex
   level: 2
-  cost: 30
+  cost: 1
   poolName: GeunGong
   _spawnCoolTime: 5
   unitData: {fileID: 11400000, guid: ff5507df38af742458481bd2ad320da5, type: 2}
