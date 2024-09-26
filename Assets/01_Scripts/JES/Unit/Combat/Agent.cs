@@ -36,6 +36,7 @@ public class Agent : MonoBehaviour, IPoolable
         MovementComp = GetComponent<AgentMovement>();
         AnimatorComp = transform.Find("Visual").GetComponent<UnitAnimator>();
         
+        HealthComp.Initialize();
         AnimatorComp.Initalize(this);
         MovementComp.IniaLize(_speed);
         MovementSet(true);
@@ -117,9 +118,8 @@ public class Agent : MonoBehaviour, IPoolable
     }
     public virtual void Attack()
     {
-        //구현
+        DamangeCasterCompo.CastDamage(_damage);
     }
-    
     
     #if UNITY_EDITOR
     private void OnDrawGizmos()

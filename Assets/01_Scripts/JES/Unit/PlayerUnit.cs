@@ -15,12 +15,7 @@ public class PlayerUnit : Agent
         
         _damage = _unitData.damage;
         _speed = _unitData.speed;
-        HealthComp.Initialize(this,true,_unitData.health);
+        HealthComp.Initialize(true,_unitData.health);
         MovementComp.IniaLize(_speed);
-    }
-
-    public override void Attack()
-    {
-        DamangeCasterCompo.CastDamage(_damage);
     }
 }
