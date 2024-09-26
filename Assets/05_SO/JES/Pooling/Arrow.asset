@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d0b2beb17b2e4342bc85b13c0a0f3b4, type: 3}
-  m_Name: GeunGong
+  m_Name: Arrow
   m_EditorClassIdentifier: 
-  poolName: GeunGong
-  prefab: {fileID: 3473071036697758434, guid: 440f371410ae3fb46a7f676e2660cc7d, type: 3}
-  count: 3
+  poolName: Arrow
+  prefab: {fileID: 4476968251961084002, guid: cae2312fcb2b03a4c8d100200640c2d5, type: 3}
+  count: 1

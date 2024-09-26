@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d0b2beb17b2e4342bc85b13c0a0f3b4, type: 3}
-  m_Name: GeunGong
+  m_Name: JJackSu
   m_EditorClassIdentifier: 
-  poolName: GeunGong
-  prefab: {fileID: 3473071036697758434, guid: 440f371410ae3fb46a7f676e2660cc7d, type: 3}
+  poolName: JJackSu
+  prefab: {fileID: 5833668029953111504, guid: cfaa2c88516c83e44b848bd022a14c50, type: 3}
   count: 3
