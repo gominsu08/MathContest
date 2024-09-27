@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39420b4916be35542b41a9e92551fed1, type: 3}
   m_Name: DariGGol
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: a06366b679ee81146b13c66fd75013b9, type: 3}
-  name: def
+  sprite: {fileID: 21300000, guid: 46822f9652bbe7747b53a49a7f588b72, type: 3}
+  name: "\uB2E4\uB9AC\uAF34 \uB113\uC774"
   level: 3
   cost: 1
   poolName: DariGGol

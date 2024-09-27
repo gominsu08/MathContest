@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39420b4916be35542b41a9e92551fed1, type: 3}
   m_Name: Gobsem
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: cb8537b99a267a442b8260030a870e0e, type: 3}
-  name: third
+  sprite: {fileID: 21300000, guid: 52ecfcf50fe79ca46a33cbad426891df, type: 3}
+  name: "\uACF1\uC148 \uACF5\uC2DD"
   level: 4
   cost: 1
   poolName: GobSem

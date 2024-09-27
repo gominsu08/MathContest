@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     public event Action<int,int> OnLevelUpEvent; // 인덱스 값이 바뀐 이벤트
     public int index = 0; // 현재 선택 인덱스 값
 
+    private bool _isMove = false;
     [Header("Upgrade Menu")] 
     [SerializeField] private GameObject _btnPanel;
     private void Awake()
@@ -35,6 +37,17 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
         _lBtn.SetActive(false); // 좌측 버튼 꺼두기
     }
 
+    private void CoStart()
+    {
+        _isMove = true;
+        StartCoroutine("DelayCO");
+    }
+
+    private IEnumerator DelayCO()
+    {
+        yield return new WaitForSeconds(0.8f);
+        _isMove = false;
+    }
 
     public void EmptyCheck()
     {
@@ -49,10 +62,11 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     }
     public void LeftBtnClick()
     {
-        if (index > 0)
+        if (index > 0&&!_isMove)
         {
             OnChangeEvent?.Invoke(--index, false);
             _rBtn.SetActive(true);
+            CoStart();
         }
         
         if(index==0)
@@ -60,10 +74,11 @@ public class UpgradeManager : MonoSingleton<UpgradeManager>
     }
     public void RightBtnClick()
     {
-        if (index < 5)
+        if (index < 5&&!_isMove)
         {
             OnChangeEvent?.Invoke(++index, true);
             _lBtn.SetActive(true);
+            CoStart();
         }
         
         if(index==5)
