@@ -21,11 +21,10 @@ public class Bomb : MonoBehaviour, IPoolable
     private Tween _tween;
     private DamageCaster _damageCaster;
     private int _damage;
-    public void Initalize(Transform _target, int damage)
+    public void Initalize(Vector3 _target, int damage)
     {
-        targetPoint = _target;
         // 포물선 경로 계산
-        Vector3[] path = CalculateParabolicPath(transform.position, targetPoint.position, height, resolution);
+        Vector3[] path = CalculateParabolicPath(transform.position, _target, height, resolution);
 
         // DoPath를 이용해 경로를 따라 이동
         _tween = transform.DOPath(path, duration, PathType.CatmullRom)

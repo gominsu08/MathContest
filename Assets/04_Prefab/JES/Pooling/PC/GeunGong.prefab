@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8687732920113778361}
   - component: {fileID: 7477856043250166395}
   - component: {fileID: 4879344972920182831}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GeunGong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +163,7 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  _enemyData: {fileID: 0}
   _poolName: GeunGong
   _unitData: {fileID: 11400000, guid: ff5507df38af742458481bd2ad320da5, type: 2}
   bombTrm: {fileID: 7202293800539975024}

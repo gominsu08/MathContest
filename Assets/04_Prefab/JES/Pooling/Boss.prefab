@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5320514003950265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.37, z: 0}
   m_LocalScale: {x: 1.62, y: 1.62, z: 1.62}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8352558810398994536}
   - component: {fileID: 7872506420588185590}
   - component: {fileID: 3572471120498947748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: -0.007974625}
+  m_Offset: {x: 0.1, y: 0.39}
   m_Size: {x: 0.72, y: 1.65}
   m_Direction: 0
 --- !u!114 &8352558810398994536
@@ -248,7 +248,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3572471120498947748}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: DeadEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 150
 --- !u!114 &3572471120498947748
 MonoBehaviour:
@@ -262,13 +274,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a86fb9e3d4814478dfacd3d19ebf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1
+  _range: 1.4
   _attackCoolTime: 3
   _speed: 2
   _damage: 10
   _targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  _enemyData: {fileID: 0}
   _poolName: Boss
 --- !u!1001 &8468842915003042573
 PrefabInstance:
@@ -284,11 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.72
+      value: 0.784
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.z

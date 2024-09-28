@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 1710166555535745791}
   - component: {fileID: 6775943870823029490}
   - component: {fileID: 310397315816844058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 310397315816844058}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: DeadEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 150
 --- !u!114 &310397315816844058
 MonoBehaviour:
@@ -262,13 +274,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a86fb9e3d4814478dfacd3d19ebf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1
-  _attackCoolTime: 3
-  _speed: 2
+  _range: 0.9
+  _attackCoolTime: 2
+  _speed: 1
   _damage: 10
   _targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  _enemyData: {fileID: 11400000, guid: a18b85deba74d9c41bce732f637d7196, type: 2}
   _poolName: Enemy1
 --- !u!1001 &4106189777509761454
 PrefabInstance:
@@ -284,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.619
+      value: 0.626
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.y

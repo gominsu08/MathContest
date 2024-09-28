@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   health: 50
-  speed: 3
+  speed: 2

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5947492490493320161}
   - component: {fileID: 1465774511081154271}
   - component: {fileID: 4801381947180077975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,8 +97,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.038377285, y: -0.007974625}
-  m_Size: {x: 0.51811314, y: 1.0531063}
+  m_Offset: {x: 0.02, y: 0.05}
+  m_Size: {x: 0.51811314, y: 1.15}
   m_Direction: 0
 --- !u!114 &5947492490493320161
 MonoBehaviour:
@@ -129,7 +129,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4801381947180077975}
+        m_TargetAssemblyTypeName: Agent, Assembly-CSharp
+        m_MethodName: DeadEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maxHealth: 150
 --- !u!114 &4801381947180077975
 MonoBehaviour:
@@ -143,13 +155,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a86fb9e3d4814478dfacd3d19ebf04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1
-  _attackCoolTime: 3
-  _speed: 2
+  _range: 0.7
+  _attackCoolTime: 2
+  _speed: 0.6
   _damage: 10
   _targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  _enemyData: {fileID: 11400000, guid: fd160e141e72f13458df365bf5bb1dde, type: 2}
   _poolName: Enemy3
 --- !u!1 &2237613842751677007
 GameObject:
@@ -226,7 +239,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1564733089, guid: 13df633a3f3941449a8be0cf3aa35c86, type: 3}
+  m_Sprite: {fileID: -258233654, guid: 5ed06a0e83e1b9e46be7d2d8c9670435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.619
+      value: 0.443
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.y

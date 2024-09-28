@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class CombatUnitData : MonoSingleton<CombatUnitData>
+public class CombatUnitData : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _costText;
     [SerializeField] private Image _iconImage;
@@ -19,6 +19,7 @@ public class CombatUnitData : MonoSingleton<CombatUnitData>
 
     private float _lastSpawnTime;
     private bool _isSpawn=false;
+    
     public void Initialize(UnitUpgradeData unitData, CombatManager manager,Vector3 towerPosition)
     {
         _unitData = unitData;
@@ -30,9 +31,10 @@ public class CombatUnitData : MonoSingleton<CombatUnitData>
         _towerPosition = towerPosition;
     }
     
-    
     public void SpanwBtnClicked()
     {
+        if (_manager.GameEnd) return;
+        
         if (_manager.CoinCheck(_unitData.cost)&&!_isSpawn)
         {
             Agent unit = PoolManager.Instance.Pop(_unitData.poolName) as Agent;

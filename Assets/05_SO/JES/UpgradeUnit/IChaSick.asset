@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 962c1035d51da564ba193de43c7ce38c, type: 3}
   name: "  \uC774\uCC28\uC2DD"
-  level: 12
-  cost: 1
+  level: 0
+  cost: 30
   poolName: IChaSick
-  _spawnCoolTime: 3
+  _spawnCoolTime: 2
   unitData: {fileID: 11400000, guid: 961d71df6df02d545960b1108b37013b, type: 2}
   index: 0
   emptyManagerPrefab: {fileID: 31261426042845507, guid: cb70d3253070878428e33c9084c43597, type: 3}

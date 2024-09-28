@@ -13,10 +13,9 @@ public class Health : MonoBehaviour
 
     private int _currentHealth;
 
-    public void Initialize(bool isPC = false,int health=0)
+    public void Initialize(int health)
     {
-        if(isPC)
-            _maxHealth = health;
+        _maxHealth = health;
         ResetHealth();
     }
 

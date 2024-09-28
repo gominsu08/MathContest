@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d117ba08e87ff42b4b35a8798ce360, type: 3}
   m_Name: HoLengh
   m_EditorClassIdentifier: 
-  damage: 40
-  health: 120
-  speed: 3.5
+  damage: 60
+  health: 30
+  speed: 1
