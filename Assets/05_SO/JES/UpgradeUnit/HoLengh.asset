@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 0
   cost: 50
   poolName: HoLengh
-  _spawnCoolTime: 3
+  _spawnCoolTime: 4
   unitData: {fileID: 11400000, guid: 7ac5c786d54a08643bd073ae9b3ceddb, type: 2}
   index: 2
   emptyManagerPrefab: {fileID: 31261426042845507, guid: 0b588e58ef7447047a5ea6eda85ce41e, type: 3}

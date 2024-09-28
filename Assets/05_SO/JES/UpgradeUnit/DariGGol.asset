@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 0
   cost: 50
   poolName: DariGGol
-  _spawnCoolTime: 3
+  _spawnCoolTime: 4
   unitData: {fileID: 11400000, guid: eeb0e8d42ece8c840b3220c138b58c4a, type: 2}
   index: 1
   emptyManagerPrefab: {fileID: 31261426042845507, guid: 57a149d1a85c17c4eb1e7b3939d55587, type: 3}

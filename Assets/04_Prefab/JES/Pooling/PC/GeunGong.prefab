@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _range: 10
-  _attackCoolTime: 2
+  _attackCoolTime: 3.5
   _speed: 0
   _damage: 0
   _targetLayer:

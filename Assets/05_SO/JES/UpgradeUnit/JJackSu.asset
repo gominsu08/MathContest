@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 0
   cost: 200
   poolName: JJackSu
-  _spawnCoolTime: 6
+  _spawnCoolTime: 7
   unitData: {fileID: 11400000, guid: 6d9a2a234f8cedc498002d78668372b8, type: 2}
   index: 5
   emptyManagerPrefab: {fileID: 7522301764140704011, guid: 087b9f6039935a5408a116e6e77a7e29, type: 3}

@@ -274,8 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dd7d8c365a5884f8d67afd650222bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 1.02
-  _attackCoolTime: 4
+  _range: 1.2
+  _attackCoolTime: 2
   _speed: 0
   _damage: 0
   _targetLayer:
@@ -298,11 +298,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.73
+      value: 0.502
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 0.071
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.z

@@ -19,5 +19,8 @@ public class PlayerUnit : Agent
         MovementComp.IniaLize(_speed);
     }
     
-    
+    protected override void HealthSet()
+    {
+        HealthComp.Initialize(_unitData.health);
+    }
 }

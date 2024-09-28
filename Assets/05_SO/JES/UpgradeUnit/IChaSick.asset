@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 0
   cost: 30
   poolName: IChaSick
-  _spawnCoolTime: 2
+  _spawnCoolTime: 3
   unitData: {fileID: 11400000, guid: 961d71df6df02d545960b1108b37013b, type: 2}
   index: 0
   emptyManagerPrefab: {fileID: 31261426042845507, guid: cb70d3253070878428e33c9084c43597, type: 3}

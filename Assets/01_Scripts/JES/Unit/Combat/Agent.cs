@@ -149,5 +149,11 @@ public class Agent : MonoBehaviour, IPoolable
         _lastAttackTime = 0;
         _isDead = false;
         gameObject.layer = _pcLayer;
+        HealthSet();
+    }
+
+    protected virtual void HealthSet()
+    {
+        HealthComp.Initialize(_enemyData.health);
     }
 }

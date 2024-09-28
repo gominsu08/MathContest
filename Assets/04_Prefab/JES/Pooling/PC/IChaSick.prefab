@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _range: 0.92
-  _attackCoolTime: 3
+  _attackCoolTime: 2
   _speed: 0
   _damage: 0
   _targetLayer:
@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.582
+      value: 0.532
       objectReference: {fileID: 0}
     - target: {fileID: 4912019300089750823, guid: 355132e8e34b17c47861814cce279398, type: 3}
       propertyPath: m_LocalPosition.y

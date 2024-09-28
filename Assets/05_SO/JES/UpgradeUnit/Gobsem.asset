@@ -17,7 +17,7 @@ MonoBehaviour:
   level: 0
   cost: 80
   poolName: GobSem
-  _spawnCoolTime: 4
+  _spawnCoolTime: 5
   unitData: {fileID: 11400000, guid: 1f1a18d3a9231c042a521b66ffa7a20e, type: 2}
   index: 3
   emptyManagerPrefab: {fileID: 31261426042845507, guid: a6347f7d986e4cd438932e82cc42bae0, type: 3}

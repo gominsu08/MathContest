@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b3a3d99ac6a49159dd778d3d3787547, type: 3}
-  m_Name: Level2
+  m_Name: Level3
   m_EditorClassIdentifier: 
-  _maxCoin: 1000
-  _coinSec: 11
-  cost: 100
+  _maxCoin: 1500
+  _coinSec: 16
+  cost: 0
