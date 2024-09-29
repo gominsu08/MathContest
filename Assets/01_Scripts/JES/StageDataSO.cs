@@ -36,7 +36,7 @@ public class StageDataSO : ScriptableObject
     {
         if (stageNumber % 5 == 0)
         {
-            enemyTowerHP += 500;
+            enemyTowerHP += 200;
             pcTowerHP += 50;
             foreach (var value in datas)
             {

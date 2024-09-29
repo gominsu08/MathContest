@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5209e06edc6db7c46907b3310ff0fb50, type: 3}
   m_Name: StageData
   m_EditorClassIdentifier: 
-  enemyTowerHP: 5000
+  enemyTowerHP: 2000
   pcTowerHP: 500
   enemy1Count: 7
   enemy2Count: 7
