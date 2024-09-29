@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _range: 1.2
   _attackCoolTime: 3
-  _speed: 1
+  _speed: 0.8
   _damage: 10
   _targetLayer:
     serializedVersion: 2
