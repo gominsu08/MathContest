@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
-using System;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 
 public class Memo : MonoBehaviour
 {
@@ -15,7 +12,9 @@ public class Memo : MonoBehaviour
     private Vector3 _memoMinSize;
     [SerializeField] private GameObject _panPrefab;
     [SerializeField] private Gradient _panColor;
-
+    
+    public bool isOpen = false;
+    
     private void Awake()
     {
         mouseNotify = new NotifyValue<Vector3>();
@@ -88,5 +87,17 @@ public class Memo : MonoBehaviour
             var line = lineStack.Pop();
             Destroy(line.gameObject);
         }
+    }
+
+    public void OpenMemo()
+    {
+        isOpen = true;
+        transform.DOScale(new Vector3(2, 2, 1), 0.25f);
+    }
+
+    public void CloseMemo()
+    {
+        isOpen = false;
+        transform.DOScale(Vector3.zero, 0.25f);
     }
 }

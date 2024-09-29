@@ -15,7 +15,7 @@ public class MemoCansle : MonoBehaviour
     {
         _memo.DeleteAllLine();
         
-        _memo.transform.DOScale(Vector3.zero, 0.5f);
+        _memo.CloseMemo(); 
     }
 
     private void Update()
