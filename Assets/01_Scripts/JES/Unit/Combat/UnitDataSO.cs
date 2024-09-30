@@ -14,4 +14,10 @@ public class UnitDataSO : ScriptableObject
         damage +=5;
         health +=5;
     }
+
+    public void EnemyUpgrade()
+    {
+        damage += 10;
+        health += 30;
+    }
 }

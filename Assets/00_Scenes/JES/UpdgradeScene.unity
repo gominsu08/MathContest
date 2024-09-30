@@ -343,8 +343,8 @@ MonoBehaviour:
   _dataList:
   - {fileID: 11400000, guid: 1845e711ec9c88241832de2cfaf1a5d4, type: 2}
   - {fileID: 11400000, guid: 5fc399952988cd04ba3f8de2f9571ccd, type: 2}
-  - {fileID: 11400000, guid: 123767a820b30594696c500931f7eb01, type: 2}
   - {fileID: 11400000, guid: c758b8fdc5bc75f499771055fb5e5a10, type: 2}
+  - {fileID: 11400000, guid: 123767a820b30594696c500931f7eb01, type: 2}
   - {fileID: 11400000, guid: 3a8b4b88fa878d04eb87fc25f7557d47, type: 2}
   - {fileID: 11400000, guid: f91ce3ac3a06af545b673e815f70b3fd, type: 2}
   _unitPrefab: {fileID: 6925805706641552187, guid: 2049da6b952427a4b923086477b70446, type: 3}

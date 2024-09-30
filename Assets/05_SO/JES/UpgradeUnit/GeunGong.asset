@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39420b4916be35542b41a9e92551fed1, type: 3}
   m_Name: GeunGong
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: be028a56e9d4dd14f855beb00b8bcda5, type: 3}
-  name: Trex
-  level: 2
-  cost: 30
+  sprite: {fileID: 21300000, guid: a0cdc292a19312f4ba130481d25135af, type: 3}
+  name: "\uADFC\uC758 \uACF5\uC2DD"
+  level: 0
+  cost: 120
   poolName: GeunGong
-  _spawnCoolTime: 5
+  _spawnCoolTime: 6
   unitData: {fileID: 11400000, guid: ff5507df38af742458481bd2ad320da5, type: 2}
   index: 4
   emptyManagerPrefab: {fileID: 7522301764140704011, guid: 1c0e1c1d93b069443ad1072599574d21, type: 3}

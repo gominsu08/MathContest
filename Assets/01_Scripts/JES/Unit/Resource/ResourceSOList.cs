@@ -9,4 +9,12 @@ using UnityEngine;
 public class ResourceSOList : ScriptableObject
 {
     public List<ResourceDataSO> dataList;
+
+    public ResourceDataSO RandomList()
+    {
+        int rand = Random.Range(0, dataList.Count);
+        ResourceDataSO data = dataList[rand];
+        data.count++;
+        return data;
+    }
 }

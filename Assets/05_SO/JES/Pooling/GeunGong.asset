@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolName: GeunGong
   prefab: {fileID: 3473071036697758434, guid: 440f371410ae3fb46a7f676e2660cc7d, type: 3}
-  count: 5
+  count: 3

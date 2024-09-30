@@ -17,8 +17,16 @@ public class CoinUI : MonoBehaviour
 
     private void HandleLevelChange(int arg1, int arg2)
     {
-        levelUpCostTxt.text = arg1.ToString();
-        levelText.text = $"Level.{arg2}";
+        if (arg1 == 0)
+        {
+            levelUpCostTxt.text = "0";
+            levelText.text = "level.Max";
+        }
+        else
+        {
+            levelUpCostTxt.text = arg1.ToString();
+            levelText.text = $"Level.{arg2}";
+        }
     }
 
     private void HandleCoinChange(float arg1, int arg2)
