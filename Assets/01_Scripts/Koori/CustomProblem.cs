@@ -6,10 +6,12 @@ public class CustomProblem : MonoBehaviour
 {
     string csvFilePath = Application.streamingAssetsPath + "/" + "CustomProblem.csv";
     [SerializeField] private CustomProblemSO _problemSO;
+    [SerializeField] private MiniGames miniGame;
 
     private void Awake()
     {
         ProblemLoad(csvFilePath);
+        miniGame.Initialize();
         Debug.Log($"{_problemSO.problems[3].expression} = {_problemSO.problems[3].answer}, Is Included Description? = {_problemSO.problems[3].isIncludDesc}");
     }
     public void ProblemLoad(string csvPath)
