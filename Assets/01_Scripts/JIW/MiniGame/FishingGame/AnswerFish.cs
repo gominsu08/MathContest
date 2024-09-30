@@ -5,7 +5,7 @@ using System;
 using TMPro;
 using Random = UnityEngine.Random;
 
-public class AnswerFishpu : MonoBehaviour
+public class AnswerFish : MonoBehaviour
 {
     private TextMeshPro _textMesh;
     private string _myAnswer;
