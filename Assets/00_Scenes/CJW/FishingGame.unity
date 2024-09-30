@@ -860,7 +860,11 @@ MonoBehaviour:
   increaseCount: 5
   solvingTime: 0
   isHardProblem: 1
+  answerCount: 4
+  minSize: -4
+  maxSize: 10
   _fishingRod: {fileID: 1219149975}
+  fishPrefab: {fileID: 1604574168916528054, guid: cd60e3c81b529124c8359b4709b43938, type: 3}
 --- !u!4 &1062619529
 Transform:
   m_ObjectHideFlags: 0
