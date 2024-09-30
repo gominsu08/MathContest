@@ -85,7 +85,7 @@ public abstract class MiniGames : MonoBehaviour
         int rand = Random.Range(1, customProblemSO.problems.Count + 1);
         currentProblemIndex = rand;
 
-        Problem<string, string, bool> problem = customProblemSO.problems[rand];
+        Problem<string, string, bool> problem = customProblemSO.problems[1];
 
         isHardProblem = problem.isIncludDesc;
 
