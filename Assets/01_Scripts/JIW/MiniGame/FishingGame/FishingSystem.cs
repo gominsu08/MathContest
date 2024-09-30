@@ -24,9 +24,4 @@ public class FishingSystem : MiniGames
             answerFish.transform.position = new Vector3(Random.Range(minSize, maxSize), 0.4f);
         }
     }
-
-    public override void GameExit()
-    {
-        base.GameExit();
-    }
 }

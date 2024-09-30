@@ -16,8 +16,6 @@ public abstract class MiniGames : MonoBehaviour
     public TextMeshProUGUI problemText;
     public SetImage setImage;
     public Image itemIcon;
-    public Memo memoPrefab;
-    protected Memo m_Memo;
     public string inSceneName;
 
     private bool _isActiveMemo = false;
@@ -25,7 +23,7 @@ public abstract class MiniGames : MonoBehaviour
     public int currentProblemIndex;
     public int increaseCount;
     public float solvingTime;
-    public bool isHardProblem = true;
+    private bool isHardProblem;
 
     protected string[] answers = { };
     protected string answer; // Á¤´ä
@@ -35,6 +33,10 @@ public abstract class MiniGames : MonoBehaviour
     
 
     protected virtual void Awake()
+    {
+        
+    }
+    public virtual void Initialize()
     {
         GameEnter();
     }
@@ -82,10 +84,11 @@ public abstract class MiniGames : MonoBehaviour
 
     public virtual void ProblemSet()
     {
-        int rand = Random.Range(1, customProblemSO.problems.Count + 1);
+        int rand = Random.Range(2, customProblemSO.problems.Count + 1);
         currentProblemIndex = rand;
 
-        Problem<string, string, bool> problem = customProblemSO.problems[rand];
+        
+        Problem<string, string, bool> problem = customProblemSO.problems[3];
 
         isHardProblem = problem.isIncludDesc;
 
@@ -169,4 +172,5 @@ public abstract class MiniGames : MonoBehaviour
     {
         SceneManager.LoadScene(inSceneName);
     }
+
 }
