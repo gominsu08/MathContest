@@ -15,22 +15,24 @@ public class StageDataSO : ScriptableObject
     public int bossCount=1;
 
     public List<UnitDataSO> datas;
+
+    public int stageCount;
     
     /// <summary>
     /// 스테이지 넘어갈때 한번씩 호출
     /// </summary>
     /// <param name="현재 스테이지 숫자 입력"></param>
-    public void CountSet(int stageNumber)
+    public void CountSet()
     {
         enemy1Count += 3;
         enemy2Count += 3;
         enemy3Count += 1;
         
-        if (stageNumber % 10 == 0)
+        if (stageCount % 10 == 0 && stageCount != 0)
         {
             bossCount += 1;
         }
-        EnemyDataSet(stageNumber);
+        EnemyDataSet(stageCount);
     }
     private void EnemyDataSet(int stageNumber)
     {
