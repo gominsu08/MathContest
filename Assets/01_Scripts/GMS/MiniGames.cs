@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public abstract class MiniGames : MonoBehaviour
 {
     public List<ResourceDataSO> increaseResourceList = new List<ResourceDataSO>();
+    public List<string> unAnswer = new List<string>();
     public RectTransform increaseResourcePanel, parentPanel;
     public CustomProblemSO customProblemSO;
     public ResourceSOList resourceSOList;
@@ -31,10 +32,6 @@ public abstract class MiniGames : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (isGameClear && Input.GetMouseButtonDown(0))
-        {
-            SceneManager.LoadScene("UpdgradeScene");
-        }
     }
 
 
@@ -45,13 +42,17 @@ public abstract class MiniGames : MonoBehaviour
 
     public virtual void GameExit()
     {
+        GetItem();
+        SetAcquisitionItemIcon(ref increaseResourceList);
+    }
+
+    private void GetItem()
+    {
         for (int i = 0; i < increaseCount; i++)
         {
             ResourceDataSO data = resourceSOList.RandomList();
             increaseResourceList.Add(data);
         }
-
-        SetAcquisitionItemIcon(ref increaseResourceList);
     }
 
     private void SetAcquisitionItemIcon(ref List<ResourceDataSO> increaseResourceList)
@@ -80,6 +81,13 @@ public abstract class MiniGames : MonoBehaviour
         StartCoroutine(Wait(problem));
 
         answer = problem.answer;
+
+        for (int i = 1; i <= customProblemSO.problems.Count; i++)
+        {
+            unAnswer.Add(customProblemSO.problems[i].answer);
+        }
+
+        unAnswer.Remove(answer);
     }
 
     public bool AnswerCheck(string answer)
@@ -122,4 +130,13 @@ public abstract class MiniGames : MonoBehaviour
         if (isClear) GameExit();
     }
 
+    public string GetAnswer()
+    {
+        return this.answer;
+    }
+
+    public void SceneChanged()
+    {
+        SceneManager.LoadScene("UpdgradeScene");
+    }
 }
