@@ -47,7 +47,7 @@ public abstract class MiniGames : MonoBehaviour
 
     protected virtual void GameEnter()
     {
-        ProblemSet(isHardProblem);
+        ProblemSet();
     }
 
     public virtual void GameExit()
@@ -80,17 +80,20 @@ public abstract class MiniGames : MonoBehaviour
         isGameClear = true;
     }
 
-    public virtual void ProblemSet(bool isHardProblem)
+    public virtual void ProblemSet()
     {
         int rand = Random.Range(1, customProblemSO.problems.Count + 1);
         currentProblemIndex = rand;
 
-        Problem<string, string> problem = customProblemSO.problems[rand];
+        Problem<string, string, bool> problem = customProblemSO.problems[rand];
+
+        isHardProblem = problem.isIncludDesc;
+
 
         if (isHardProblem)
-            StartCoroutine(Wait(problem));
-        else
             SetProblemeText(problem);
+        else
+            StartCoroutine(Wait(problem));
 
         answer = problem.answer;
 
@@ -102,7 +105,7 @@ public abstract class MiniGames : MonoBehaviour
         unAnswer.Remove(answer);
     }
 
-    private void SetProblemeText(Problem<string, string> problem)
+    private void SetProblemeText(Problem<string, string, bool> problem)
     {
         problemText.gameObject.SetActive(true);
         setImage.gameObject.SetActive(false);
@@ -120,7 +123,7 @@ public abstract class MiniGames : MonoBehaviour
         return false;
     }
 
-    public IEnumerator Wait(Problem<string, string> problem)
+    public IEnumerator Wait(Problem<string, string, bool> problem)
     {
         yield return new WaitForSeconds(3f);
         setImage.GetTexture(problem.expression);

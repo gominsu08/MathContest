@@ -2,3 +2,6 @@
 1,박하늘,170,TRUE
 2,김하늘,1223,TRUE
 3,{2} over {3} sqrt {3} +- ,9876,FALSE
+4,{2} over {3} sqrt {4} +-,9877,FALSE
+5,{2} over {3} sqrt {5} +-,9878,FALSE
+6,{2} over {3} sqrt {6} +-,9879,FALSE
