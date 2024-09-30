@@ -25,7 +25,7 @@ public abstract class MiniGames : MonoBehaviour
     public int currentProblemIndex;
     public int increaseCount;
     public float solvingTime;
-    public bool isHardProblem = true;
+    private bool isHardProblem;
 
     protected string[] answers = { };
     protected string answer; // Á¤´ä
@@ -82,10 +82,11 @@ public abstract class MiniGames : MonoBehaviour
 
     public virtual void ProblemSet()
     {
-        int rand = Random.Range(1, customProblemSO.problems.Count + 1);
+        int rand = Random.Range(2, customProblemSO.problems.Count + 1);
         currentProblemIndex = rand;
 
-        Problem<string, string, bool> problem = customProblemSO.problems[rand];
+        
+        Problem<string, string, bool> problem = customProblemSO.problems[3];
 
         isHardProblem = problem.isIncludDesc;
 

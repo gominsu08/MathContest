@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 884361969}
   - component: {fileID: 884361970}
   m_Layer: 5
-  m_Name: AnswerCheckerBtn
+  m_Name: AnswerChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
