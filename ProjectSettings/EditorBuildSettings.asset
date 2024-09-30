@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/Gwamegi.unity
     guid: 8d54ea68800309a48963d6445fa9119f
+  - enabled: 1
+    path: Assets/00_Scenes/JES/CombatScene.unity
+    guid: 6644a8ed5f690904aa7f2b8a974d09f1
   m_configObjects: {}
