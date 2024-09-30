@@ -22,6 +22,8 @@ public class Agent : MonoBehaviour, IPoolable
     private bool _isDead = false;
     protected int _pcLayer;
     protected int _deadLayer;
+    
+    [SerializeField] private UnitDataSO _enemyData;
     #region Component
     public DamageCaster DamangeCasterCompo { get;protected set; }
     public Health HealthComp { get;protected set; }
@@ -29,7 +31,7 @@ public class Agent : MonoBehaviour, IPoolable
     
     public UnitAnimator AnimatorComp { get;protected set; }
     #endregion
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         DamangeCasterCompo = transform.Find("DamageCaster").GetComponent<DamageCaster>();
         HealthComp = GetComponent<Health>();
@@ -40,17 +42,26 @@ public class Agent : MonoBehaviour, IPoolable
         MovementComp.IniaLize(_speed);
         MovementSet(true);
         _deadLayer = LayerMask.NameToLayer("DeadBody");
+
         _pcLayer = gameObject.layer;
+        
+        if (_enemyData != null)
+        {
+            HealthComp.Initialize(_enemyData.health);
+            _damage = _enemyData.damage;
+        }
     }
 
     private void FixedUpdate()
     {
-        if (AnimationEndTrigger && _isDead)
+        if (_isDead && !AnimationEndTrigger)
         {
             DeadAniEnd();
         }
-        if(AnimationEndTrigger||_isDead) return;
-        Debug.Log("Fixed update");
+        else if (AnimationEndTrigger || _isDead)
+        {
+            return;
+        }
         Collider2D spotTarget = TargetDetect();
         if (spotTarget!=null)
         {
@@ -72,6 +83,7 @@ public class Agent : MonoBehaviour, IPoolable
 
     public void DeadEnter()
     {
+        MovementSet(false);
         gameObject.layer = _deadLayer;
         _isDead = true;
         AnimatorComp.DeadAniSet();
@@ -111,14 +123,14 @@ public class Agent : MonoBehaviour, IPoolable
     }
     public void AniEndTrigger()
     {
+        AnimatorComp.IdleAniSet();
         AnimationEndTrigger = false;
         _lastAttackTime = Time.time;
     }
     public virtual void Attack()
     {
-        //구현
+        DamangeCasterCompo.CastDamage(_damage);
     }
-    
     
     #if UNITY_EDITOR
     private void OnDrawGizmos()
@@ -134,7 +146,14 @@ public class Agent : MonoBehaviour, IPoolable
     public GameObject ObjectPrefab => gameObject;
     public void ResetItem()
     {
+        _lastAttackTime = 0;
         _isDead = false;
         gameObject.layer = _pcLayer;
+        HealthSet();
+    }
+
+    protected virtual void HealthSet()
+    {
+        HealthComp.Initialize(_enemyData.health);
     }
 }

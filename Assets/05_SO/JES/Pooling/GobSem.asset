@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0b2beb17b2e4342bc85b13c0a0f3b4, type: 3}
+  m_Name: GobSem
+  m_EditorClassIdentifier: 
+  poolName: GobSem
+  prefab: {fileID: 7980382169976715603, guid: a1988a5222101794aa1d6cbd15e867b8, type: 3}
+  count: 3

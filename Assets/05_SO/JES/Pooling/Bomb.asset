@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolName: Bomb
   prefab: {fileID: 7521579284475072412, guid: 95d2f0f72586b344d9bc2e8afc2d6095, type: 3}
-  count: 5
+  count: 2

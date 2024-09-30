@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolName: IChaSick
   prefab: {fileID: 24808011108402863, guid: 202a102d81c0fd4499133827ef86e458, type: 3}
-  count: 5
+  count: 3

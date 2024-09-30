@@ -12,13 +12,10 @@ public class Health : MonoBehaviour
     [SerializeField] private int _maxHealth = 150;
 
     private int _currentHealth;
-    private Agent _owner;
 
-    public void Initialize(Agent owner,bool isPC = false,int health=0)
+    public void Initialize(int health)
     {
-        _owner = owner;
-        if(isPC)
-            _maxHealth = health;
+        _maxHealth = health;
         ResetHealth();
     }
 

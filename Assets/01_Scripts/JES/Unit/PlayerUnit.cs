@@ -7,15 +7,20 @@ public class PlayerUnit : Agent
 {
     [SerializeField] private UnitDataSO _unitData;
     
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         
         transform.rotation = Quaternion.Euler(0, 180, 0);
         
         _damage = _unitData.damage;
         _speed = _unitData.speed;
-        HealthComp.Initialize(this,true,_unitData.health);
+        HealthComp.Initialize(_unitData.health);
         MovementComp.IniaLize(_speed);
+    }
+    
+    protected override void HealthSet()
+    {
+        HealthComp.Initialize(_unitData.health);
     }
 }
