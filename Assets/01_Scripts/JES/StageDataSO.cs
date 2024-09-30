@@ -36,7 +36,7 @@ public class StageDataSO : ScriptableObject
     }
     private void EnemyDataSet(int stageNumber)
     {
-        if (stageNumber % 5 == 0)
+        if (stageNumber % 5 == 0&& stageCount != 0)
         {
             enemyTowerHP += 200;
             pcTowerHP += 50;

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class EnemyTower : MonoBehaviour
@@ -16,6 +18,9 @@ public class EnemyTower : MonoBehaviour
     private bool _isSpawning = false;
 
     private Health _healthCompo;
+
+    [SerializeField] private GameObject _sucPanel, _failPanel;
+    [SerializeField] private TextMeshProUGUI _stageText;
     private void Awake()
     {
         _currentStageData = Instantiate(_stageData);
@@ -75,13 +80,20 @@ public class EnemyTower : MonoBehaviour
     {
         CombatManager.Instance.GameEnd = true;
         StopAllCoroutines();
-        if (isEnemy)
+        if (isEnemy&&!CombatManager.Instance.GameEnd)
         {
-            //승리 처리
+            _sucPanel.SetActive(true);
+            _stageData.stageCount++;
+            _stageText.text =$"{_stageData.stageCount}스테이지 해금!";
         }
-        else
+        else if(!isEnemy&&!CombatManager.Instance.GameEnd)
         {
-            //패배 처리
+            _failPanel.SetActive(true);
         }
+    }
+
+    public void ExitBtn()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }
