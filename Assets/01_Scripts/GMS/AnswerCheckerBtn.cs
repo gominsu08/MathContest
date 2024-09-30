@@ -6,8 +6,8 @@ using UnityEngine;
 
 public enum answerEnum
 {
-    True,
-    False
+    TrueAnswer,
+    FalseAnswer
 }
 
 public class AnswerCheckerBtn : MonoBehaviour
@@ -29,14 +29,14 @@ public class AnswerCheckerBtn : MonoBehaviour
 
     private void Start()
     {
-        if (answerEnum == answerEnum.False)
+        if (answerEnum == answerEnum.FalseAnswer)
         {
             unAnswerList = miniGame.unAnswer;
             int rand = Random.Range(0, miniGame.unAnswer.Count);
             unAnswerText = miniGame.unAnswer[rand];
             miniGame.unAnswer.RemoveAt(rand);
         }
-        else if(answerEnum == answerEnum.True)
+        else if(answerEnum == answerEnum.TrueAnswer)
         {
             unAnswerText = miniGame.GetAnswer();
         }
