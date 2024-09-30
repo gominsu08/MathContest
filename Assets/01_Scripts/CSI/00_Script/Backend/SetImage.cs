@@ -20,7 +20,7 @@ public class SetImage : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(3f);
-        GetTexture("{2} over {3} sqrt {3} +- ");
+        //GetTexture("{2} over {3} sqrt {3} +- ");
 
     }
     private void Start()
