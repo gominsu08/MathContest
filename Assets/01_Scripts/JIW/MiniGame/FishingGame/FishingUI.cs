@@ -11,6 +11,7 @@ public class FishingUI : MonoBehaviour
 
     private Image _gayg;
 
+
     private void Awake()
     {
         _gayg = transform.Find("Gayg").GetComponent<Image>();
@@ -18,11 +19,11 @@ public class FishingUI : MonoBehaviour
 
     private void Start()
     {
-        fishingRod._force.OnValueChanged += handleValueChage;
+        fishingRod._force.OnValueChanged += HandleValueChage;
     }
 
-    private void handleValueChage(float prev, float next)
+    private void HandleValueChage(float prev, float next)
     {
-        
+        _gayg.fillAmount = (next - fishingRod._minForce) / (fishingRod._maxForce - fishingRod._minForce);
     }
 }

@@ -11,11 +11,17 @@ public class FishingRod : MonoBehaviour
     public NotifyValue<float> _force;
     public float _maxForce;
 
+    private bool _isCharging;
+
     private Tweener _forceTweener;
+
+    public Transform _firePos;
 
     private void Awake()
     {
+        _firePos = transform.Find("FirePos");
         _force = new NotifyValue<float>();
+        _isCharging = false;
     }
 
     private void Update()
@@ -37,7 +43,7 @@ public class FishingRod : MonoBehaviour
     private void StartSetForce()
     {
         _force.Value = _minForce;
-        _forceTweener = DOTween.To(() => _force.Value, x => _force = x, _maxForce, 0.75f)
+        _forceTweener = DOTween.To(() => _force.Value, x => _force.Value = x, _maxForce, 0.75f)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Yoyo);
     }
@@ -45,13 +51,20 @@ public class FishingRod : MonoBehaviour
     private void EndSetForce()
     {
         _forceTweener.Kill();
+        _isCharging = true;
     }
 
     private void BobberFire(float force)
     {
-        Bobber bobber = GameObject.Instantiate(_bobberPrefab,transform.position,Quaternion.identity);
+        if (!_isCharging) return; 
+        
+        Bobber bobber = Instantiate(_bobberPrefab);
+        bobber.transform.position = _firePos.position;
+        
         Vector3 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        bobber.InitAndFire(dir.normalized, force);
+        bobber.InitAndFire(dir.normalized,this, force);
         _force.Value = _minForce;
+        
+        _isCharging = false;
     }
 }
