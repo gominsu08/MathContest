@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d1a4de-087b-46cc-8377-04db3cfb7350" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00_Scenes/CJW/CJWTestScenes.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00_Scenes/CJW/CJWTestScenes.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00_Scenes/CJW/FishingGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scenes/CJW/FishingGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/FishingSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/FishingSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +111,7 @@
       <workItem from="1727652844240" duration="3000" />
       <workItem from="1727652854383" duration="9392000" />
       <workItem from="1727692857494" duration="11634000" />
+      <workItem from="1727709109887" duration="1347000" />
     </task>
     <servers />
   </component>
