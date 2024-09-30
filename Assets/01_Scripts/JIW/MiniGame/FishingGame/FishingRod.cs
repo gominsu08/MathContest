@@ -12,6 +12,7 @@ public class FishingRod : MonoBehaviour
     public float _maxForce;
 
     private bool _isCharging;
+    public bool isFire;
 
     private Tweener _forceTweener;
 
@@ -26,18 +27,16 @@ public class FishingRod : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isFire)
         {
             StartSetForce();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && !isFire)
         {
             EndSetForce();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.T))
             BobberFire(_force.Value);
+        }
     }
 
     private void StartSetForce()
@@ -66,5 +65,7 @@ public class FishingRod : MonoBehaviour
         _force.Value = _minForce;
         
         _isCharging = false;
+        isFire = true;
     }
+
 }

@@ -12,20 +12,29 @@ public abstract class MiniGames : MonoBehaviour
     public RectTransform increaseResourcePanel, parentPanel;
     public CustomProblemSO customProblemSO;
     public ResourceSOList resourceSOList;
-    public TextMeshProUGUI Answertext;
+    public TextMeshProUGUI answertext;
+    public TextMeshProUGUI problemText;
     public SetImage setImage;
     public Image itemIcon;
+    public Memo memoPrefab;
+    protected Memo m_Memo;
+    public string inSceneName;
+
+    private bool _isActiveMemo = false;
 
     public int currentProblemIndex;
     public int increaseCount;
     public float solvingTime;
-
+    public bool isHardProblem = true;
 
     protected string[] answers = { };
     protected string answer; // 정답
     protected bool isGameClear; // 게임이 끝나면 true
 
-    protected virtual void Start()
+
+    
+
+    protected virtual void Awake()
     {
         GameEnter();
     }
@@ -34,6 +43,7 @@ public abstract class MiniGames : MonoBehaviour
     {
     }
 
+   
 
     protected virtual void GameEnter()
     {
@@ -57,7 +67,6 @@ public abstract class MiniGames : MonoBehaviour
 
     private void SetAcquisitionItemIcon(ref List<ResourceDataSO> increaseResourceList)
     {
-
         increaseResourcePanel.gameObject.SetActive(true);
 
         foreach (ResourceDataSO data in increaseResourceList)
@@ -76,9 +85,15 @@ public abstract class MiniGames : MonoBehaviour
         int rand = Random.Range(1, customProblemSO.problems.Count + 1);
         currentProblemIndex = rand;
 
-        Problem<string, string> problem = customProblemSO.problems[3];
+        Problem<string, string, bool> problem = customProblemSO.problems[rand];
 
-        StartCoroutine(Wait(problem));
+        isHardProblem = problem.isIncludDesc;
+
+
+        if (isHardProblem)
+            SetProblemeText(problem);
+        else
+            StartCoroutine(Wait(problem));
 
         answer = problem.answer;
 
@@ -90,6 +105,15 @@ public abstract class MiniGames : MonoBehaviour
         unAnswer.Remove(answer);
     }
 
+    private void SetProblemeText(Problem<string, string, bool> problem)
+    {
+        problemText.gameObject.SetActive(true);
+        setImage.gameObject.SetActive(false);
+
+        problemText.SetText(problem.expression);
+
+    }
+
     public bool AnswerCheck(string answer)
     {
         if (answer == this.answer)
@@ -99,7 +123,7 @@ public abstract class MiniGames : MonoBehaviour
         return false;
     }
 
-    public IEnumerator Wait(Problem<string, string> problem)
+    public IEnumerator Wait(Problem<string, string, bool> problem)
     {
         yield return new WaitForSeconds(3f);
         setImage.GetTexture(problem.expression);
@@ -108,26 +132,27 @@ public abstract class MiniGames : MonoBehaviour
     public IEnumerator Typing(bool isClear)
     {
         string ming;
-        Answertext.gameObject.SetActive(true);
+        answertext.gameObject.SetActive(true);
         ming = ".";
-        Answertext.SetText(ming);
+        answertext.SetText(ming);
         yield return new WaitForSeconds(0.35f);
         ming = ". .";
-        Answertext.SetText(ming);
+        answertext.SetText(ming);
         yield return new WaitForSeconds(0.45f);
         ming = ". . .";
-        Answertext.SetText(ming);
+        answertext.SetText(ming);
         yield return new WaitForSeconds(0.5f);
         if (isClear) ming = "정답!";
         else ming = "오답";
 
 
 
-        Answertext.SetText(ming);
+        answertext.SetText(ming);
 
         yield return new WaitForSeconds(1.5f);
-        Answertext.gameObject.SetActive(false);
+        answertext.gameObject.SetActive(false);
         if (isClear) GameExit();
+        else SceneChanged();
     }
 
     public string GetAnswer()
@@ -138,5 +163,10 @@ public abstract class MiniGames : MonoBehaviour
     public void SceneChanged()
     {
         SceneManager.LoadScene("UpdgradeScene");
+    }
+
+    public void ReStart()
+    {
+        SceneManager.LoadScene(inSceneName);
     }
 }

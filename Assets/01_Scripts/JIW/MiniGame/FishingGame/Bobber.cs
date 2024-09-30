@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DG.Tweening;
 
 public class Bobber : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Bobber : MonoBehaviour
     private FishingRod _fishingRod;
 
     private LineRenderer _line;
-    private HingeJoint2D _joint;
+    private AnswerFish _getFish;
 
     private void Awake()
     {
@@ -28,6 +29,15 @@ public class Bobber : MonoBehaviour
         _rigid.AddForce(dir * force,ForceMode2D.Impulse);
     }
 
+    private void Update()
+    {
+        if (_getFish != null)
+        {
+            _getFish.transform.position = transform.position;
+            
+        }
+    }
+
     private void FixedUpdate()
     {
         float angle = Mathf.Atan2(_rigid.velocity.y, _rigid.velocity.x) * Mathf.Rad2Deg;
@@ -37,8 +47,18 @@ public class Bobber : MonoBehaviour
             _line.SetPosition(0, transform.position);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.gameObject.TryGetComponent(out AnswerFish fish))
+        {
+            _getFish = fish;
+            transform.DOMove(_fishingRod.transform.position, 3f);
+                //.OnComplete();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        _fishingRod.isFire = false;
     }
 }
