@@ -5,9 +5,8 @@ using UnityEngine;
 public class AnswerCheck : MonoBehaviour
 {
     public MiniGames game;
-    public string answer;
 
-    public void AnswerChecker()
+    public void AnswerChecker(string answer)
     {
         bool isClear = game.AnswerCheck(answer);
         StartCoroutine(game.Typing(isClear));
