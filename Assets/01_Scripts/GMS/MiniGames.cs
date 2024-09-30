@@ -16,8 +16,6 @@ public abstract class MiniGames : MonoBehaviour
     public TextMeshProUGUI problemText;
     public SetImage setImage;
     public Image itemIcon;
-    public Memo memoPrefab;
-    protected Memo m_Memo;
     public string inSceneName;
 
     private bool _isActiveMemo = false;
@@ -35,6 +33,10 @@ public abstract class MiniGames : MonoBehaviour
     
 
     protected virtual void Awake()
+    {
+        
+    }
+    public virtual void Initialize()
     {
         GameEnter();
     }
@@ -170,4 +172,5 @@ public abstract class MiniGames : MonoBehaviour
     {
         SceneManager.LoadScene(inSceneName);
     }
+
 }

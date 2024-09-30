@@ -1729,6 +1729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _problemSO: {fileID: 11400000, guid: 5a9851218a764d04183cf468f0ca7a6b, type: 2}
+  miniGame: {fileID: 1703330568}
 --- !u!4 &1588227107
 Transform:
   m_ObjectHideFlags: 0
@@ -1783,12 +1784,10 @@ MonoBehaviour:
   problemText: {fileID: 545741807}
   setImage: {fileID: 387395568}
   itemIcon: {fileID: 1460543159}
-  memoPrefab: {fileID: 832622078001860849, guid: 8be2f4a2462e1594a9863f5ebcde3936, type: 3}
   inSceneName: Gwamegi
   currentProblemIndex: 0
   increaseCount: 3
   solvingTime: 0
-  isHardProblem: 1
   _player: {fileID: 0}
 --- !u!4 &1703330569
 Transform:
