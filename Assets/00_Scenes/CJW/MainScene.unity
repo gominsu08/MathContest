@@ -213,8 +213,20 @@ PrefabInstance:
       value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bf17409911cb7574cb950e99600ad320, type: 2}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_fontSizeBase
       value: 53
+      objectReference: {fileID: 0}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4452239350493684031, guid: bf17409911cb7574cb950e99600ad320, type: 2}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3055374531908680095, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_Pivot.x
@@ -870,8 +882,20 @@ PrefabInstance:
       value: 38.94
       objectReference: {fileID: 0}
     - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bf17409911cb7574cb950e99600ad320, type: 2}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_fontSizeBase
       value: 38.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4452239350493684031, guid: bf17409911cb7574cb950e99600ad320, type: 2}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3055374531908680095, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_Pivot.x
