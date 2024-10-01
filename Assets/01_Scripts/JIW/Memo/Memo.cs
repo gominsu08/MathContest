@@ -40,7 +40,7 @@ public class Memo : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 if (!isOpen)
                     OpenMemo();

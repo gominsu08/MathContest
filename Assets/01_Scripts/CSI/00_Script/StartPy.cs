@@ -68,22 +68,20 @@ public class StartPy : MonoBehaviour
     public void Disable_Py()
     {
         var processList = DI.Process.GetProcessesByName("StartPy");
-        if(processList.Length > 0)
+        if (processList.Length > 0)
         {
             print("프로세스가 1개이상 동작중..");
-            
-            foreach(Process process in processList)
+            for (int i = 0; i < processList.Length; i++)
             {
-                if (process.ProcessName.StartsWith("StartPy"))
-                {
-                    process.Kill();
-                }
+                processList[i].Kill();
             }
+
         }
         else
         {
             print("실행된 프로세스 없음");
         }
+
     }
     private void Update()
     {
