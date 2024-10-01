@@ -78,10 +78,10 @@ public class EnemyTower : MonoBehaviour
 
     public void TowerBreak(bool isEnemy)
     {
-        CombatManager.Instance.GameEnd = true;
         StopAllCoroutines();
         if (isEnemy&&!CombatManager.Instance.GameEnd)
         {
+            _stageData._isFirstStage = true;
             _sucPanel.SetActive(true);
             _stageData.stageCount++;
             _stageText.text =$"{_stageData.stageCount}스테이지 해금!";
@@ -90,6 +90,7 @@ public class EnemyTower : MonoBehaviour
         {
             _failPanel.SetActive(true);
         }
+        CombatManager.Instance.GameEnd = true;
     }
 
     public void ExitBtn()
