@@ -9,10 +9,12 @@ public class AnswerFish : MonoBehaviour
 {
     private TextMeshPro _textMesh;
     private string _myAnswer;
+    public Collider2D _collider;
 
-    private void Start()
+    private void Awake()
     {
         _textMesh = transform.Find("Text").GetComponent<TextMeshPro>();
+        _collider = transform.GetComponent<Collider2D>();
     }
 
     public void Init(string answer)
@@ -26,7 +28,7 @@ public class AnswerFish : MonoBehaviour
 
     public string GetAnswer()
     {
+        Destroy(this.gameObject);
         return _myAnswer;
-        Destroy(this);
     }
 }

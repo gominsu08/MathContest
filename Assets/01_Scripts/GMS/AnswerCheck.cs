@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnswerCheck : MonoBehaviour
+public class AnswerCheck : MonoSingleton<AnswerCheck>
 {
     public MiniGames game;
 

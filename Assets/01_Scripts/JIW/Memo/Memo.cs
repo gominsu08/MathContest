@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class Memo : MonoBehaviour
     
     private void Awake()
     {
+        isOpen = false;
         mouseNotify = new NotifyValue<Vector3>();
         lineStack = new Stack<LineRenderer>();
         _memoList = new List<Vector3>();
@@ -30,6 +32,22 @@ public class Memo : MonoBehaviour
         
         _memoMaxSize = bounds.max;
         _memoMinSize = bounds.min;
+        
+        transform.localScale = Vector3.zero;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                if (!isOpen)
+                    OpenMemo();
+                else
+                    CloseMemo();
+            }
+        }
     }
 
     private void OnDisable()
@@ -97,6 +115,7 @@ public class Memo : MonoBehaviour
 
     public void CloseMemo()
     {
+        DeleteAllLine();
         isOpen = false;
         transform.DOScale(Vector3.zero, 0.25f);
     }

@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89d1a4de-087b-46cc-8377-04db3cfb7350" name="변경" comment="">
+    <list default="true" id="f18369f3-cdeb-4b03-940d-5aace676ceb1" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/00_Scenes/CJW/FishingGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00_Scenes/CJW/FishingGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scripts/GMS/AnswerCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scripts/GMS/AnswerCheck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scripts/JIW/Memo/Memo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scripts/JIW/Memo/Memo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/AnswerFish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/AnswerFish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/Bobber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/Bobber.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/FishingSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/FishingSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Prefab/JIW/Memo/Line.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefab/JIW/Memo/Line.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Prefab/JIW/Memo/Memo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefab/JIW/Memo/Memo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Prefab/JIW/MiniGame/Answer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefab/JIW/MiniGame/Answer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04_Prefab/JIW/UI/Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefab/JIW/UI/Wall.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,24 +27,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/6c/518df2e5/Object.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f7018b8b8c149e68c4a65a05ac289be175400/a8/007b42bd/Bounds.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MainScene/DeadZon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MainScene/Tower.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/Memo/MemoCansle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/AnswerFish.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/Bobber.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/FishingRod.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/FishingUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/MiniGame/FishingGame/SeaControll.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/01_Scripts/JIW/UI/MainUi/MainUIBtn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.shadergraph@14.0.10/Editor/Data/Graphs/SerializableTexture.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2mTB3BPatyHmLMrqmX0Af42W9ao" />
+  <component name="ProjectId" id="2mnYJGgx9kVe7GYyC1y5u3zcwup" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -92,26 +89,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="89d1a4de-087b-46cc-8377-04db3cfb7350" name="변경" comment="" />
-      <created>1727090485279</created>
+      <changelist id="f18369f3-cdeb-4b03-940d-5aace676ceb1" name="변경" comment="" />
+      <created>1727713734877</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1727090485279</updated>
-      <workItem from="1727090487559" duration="35000" />
-      <workItem from="1727090539194" duration="7929000" />
-      <workItem from="1727184644940" duration="210000" />
-      <workItem from="1727184863735" duration="124000" />
-      <workItem from="1727187305464" duration="4962000" />
-      <workItem from="1727222339923" duration="6764000" />
-      <workItem from="1727279112621" duration="2988000" />
-      <workItem from="1727305806412" duration="3678000" />
-      <workItem from="1727613404640" duration="8146000" />
-      <workItem from="1727625030204" duration="9000" />
-      <workItem from="1727625048075" duration="27000" />
-      <workItem from="1727652844240" duration="3000" />
-      <workItem from="1727652854383" duration="9392000" />
-      <workItem from="1727692857494" duration="11634000" />
-      <workItem from="1727709109887" duration="1347000" />
+      <updated>1727713734877</updated>
+      <workItem from="1727713736418" duration="1312000" />
+      <workItem from="1727766340375" duration="765000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,10 @@ public class FishingSystem : MiniGames
         for (int i = 0; i < answerCount; i++)
         {
             var answerFish = Instantiate(fishPrefab);
-            answerFish.Init("문제");
+            int random = Random.Range(0, unAnswer.Count);
+            string str = unAnswer[random];
+            unAnswer.RemoveAt(random);
+            answerFish.Init(str);
             answerFish.transform.position = new Vector3(Random.Range(minSize, maxSize), 0.4f);
         }
     }
