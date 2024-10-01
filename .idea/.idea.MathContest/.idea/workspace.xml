@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d1a4de-087b-46cc-8377-04db3cfb7350" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/04_Prefab/JES/CombatSceneUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefab/JES/CombatSceneUnit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MathContest/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "JES",
+    "git-widget-placeholder": "Toothless",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,6 +113,7 @@
       <workItem from="1727652854383" duration="9392000" />
       <workItem from="1727692857494" duration="11634000" />
       <workItem from="1727709109887" duration="1347000" />
+      <workItem from="1727783962596" duration="1369000" />
     </task>
     <servers />
   </component>
