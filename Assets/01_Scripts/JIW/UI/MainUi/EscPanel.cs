@@ -10,11 +10,11 @@ public class EscPanel : MonoBehaviour
 
     public bool _isGameStop;
 
-    private void Awake()
+    public void Initailize()
     {
         Time.timeScale = 1;
         _isGameStop = false;
-        
+
         _btnList = new List<MainBtnMethod>();
         foreach (var item in transform)
         {
@@ -24,7 +24,7 @@ public class EscPanel : MonoBehaviour
                 btn.gameObject.SetActive(false);
             }
         }
-        
+
         gameObject.SetActive(false);
         ActiveBtns(false);
     }

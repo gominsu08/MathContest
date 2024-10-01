@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/CJW/MainScene.unity
     guid: d7c33a03e3302244fb7e1d1a7ee78e5b
+  - enabled: 1
+    path: Assets/00_Scenes/Gwamegi/TitleScene.unity
+    guid: 525ad0e4a2cb8f440b59219fb595ae63
+  - enabled: 1
+    path: Assets/00_Scenes/Gwamegi.unity
+    guid: 8d54ea68800309a48963d6445fa9119f
+  - enabled: 1
+    path: Assets/00_Scenes/CJW/FishingGame.unity
+    guid: d0d4ab56a0c100646b7604625b8cb8b2
   m_configObjects: {}

@@ -8,12 +8,18 @@ using UnityEngine.UI;
 
 public class MainUIBtn : MonoBehaviour
 {
-    [SerializeField] private int _sceneIndex;
+    [SerializeField] private string _sceneNeme;
     [SerializeField] private Color _enterColor;
+
+    [SerializeField] private RectTransform _miniGameChoiseBtn;
+
+    public Tower tower;
 
     private Color _color;
 
     private Image _btnImage;
+
+    private bool isTrigger = true;
 
     private void Awake()
     {
@@ -21,9 +27,17 @@ public class MainUIBtn : MonoBehaviour
         _btnImage = GetComponent<Image>();
     }
 
+    public void OnPanelSizeMing()
+    {
+        _miniGameChoiseBtn.gameObject.SetActive(isTrigger);
+        tower.ColliderActive(!isTrigger);
+
+        isTrigger = !isTrigger;
+    }
+
     public void OnClickBtn()
     {
-        SceneManager.LoadScene(_sceneIndex);
+        SceneManager.LoadScene(_sceneNeme);
     }
 
     public void OnEnter()

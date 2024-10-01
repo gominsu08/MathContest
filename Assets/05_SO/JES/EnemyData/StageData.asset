@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTowerHP: 3200
   pcTowerHP: 800
-  enemy1Count: 34
-  enemy2Count: 34
-  enemy3Count: 13
+  enemy1Count: 7
+  enemy2Count: 7
+  enemy3Count: 5
   bossCount: 1
   datas:
   - {fileID: 11400000, guid: 7880acc16b32bbb4aa04ebe7224de484, type: 2}
@@ -24,3 +24,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7fa143a0c1a35994fa87b95d9155a5ed, type: 2}
   - {fileID: 11400000, guid: fd160e141e72f13458df365bf5bb1dde, type: 2}
   stageCount: 0
+  _isFirstStage: 1
