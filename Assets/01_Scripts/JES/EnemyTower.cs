@@ -81,6 +81,7 @@ public class EnemyTower : MonoBehaviour
         StopAllCoroutines();
         if (isEnemy&&!CombatManager.Instance.GameEnd)
         {
+            _stageData._isFirstStage = true;
             _sucPanel.SetActive(true);
             _stageData.stageCount++;
             _stageText.text =$"{_stageData.stageCount}스테이지 해금!";

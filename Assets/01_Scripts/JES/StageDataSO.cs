@@ -17,6 +17,7 @@ public class StageDataSO : ScriptableObject
     public List<UnitDataSO> datas;
 
     public int stageCount;
+    public bool _isFirstStage = true;
     
     /// <summary>
     /// 스테이지 넘어갈때 한번씩 호출
@@ -24,6 +25,8 @@ public class StageDataSO : ScriptableObject
     /// <param name="현재 스테이지 숫자 입력"></param>
     public void CountSet()
     {
+        if(!_isFirstStage) return;
+        
         enemy1Count += 3;
         enemy2Count += 3;
         enemy3Count += 1;
@@ -33,6 +36,8 @@ public class StageDataSO : ScriptableObject
             bossCount += 1;
         }
         EnemyDataSet(stageCount);
+        
+        _isFirstStage = false;
     }
     private void EnemyDataSet(int stageNumber)
     {

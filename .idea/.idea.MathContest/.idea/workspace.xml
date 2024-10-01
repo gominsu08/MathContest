@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89d1a4de-087b-46cc-8377-04db3cfb7350" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/04_Prefab/JES/CombatSceneUnit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04_Prefab/JES/CombatSceneUnit.prefab" afterDir="false" />
-    </list>
+    <list default="true" id="89d1a4de-087b-46cc-8377-04db3cfb7350" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
