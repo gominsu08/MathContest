@@ -2436,7 +2436,7 @@ MonoBehaviour:
   stageData: {fileID: 11400000, guid: e98b9cc914656d946ac1bd28659b0840, type: 2}
   _towerPoints: []
   towerPrefab: {fileID: 6070473586479207763, guid: 15add8ee71559954fbc96f025fbce735, type: 3}
-  _towerCount: 20
+  _towerCount: 50
   currentTowerIndex: 0
 --- !u!4 &1885626426
 Transform:
