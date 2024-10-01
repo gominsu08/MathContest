@@ -13,11 +13,14 @@ public class Bobber : MonoBehaviour
     private LineRenderer _line;
     private AnswerFish _getFish;
 
+    private bool _isGetFish;
+
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
         _line = GetComponent<LineRenderer>();
         _collider = GetComponent<Collider2D>();
+        _isGetFish = false;
     }
 
     public void InitAndFire(Vector3 dir, FishingRod rod, float force = 13f)
@@ -51,15 +54,15 @@ public class Bobber : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.TryGetComponent(out AnswerFish fish))
+        if (other.gameObject.TryGetComponent(out AnswerFish fish) && !_isGetFish)
         {
             _getFish = fish;
+            _isGetFish = true;
+            _getFish._collider.isTrigger = true;
+            _collider.isTrigger = true;
             transform.DOMove(_fishingRod.transform.position, 3f).SetEase(Ease.Linear)
                 .OnComplete(() =>
                 {
-                    Debug.Log("?");
-                    _getFish._collider.isTrigger = true;
-                    _collider.isTrigger = true;
                     AnswerCheck.Instance.AnswerChecker(_getFish.GetAnswer());
                     Destroy(this.gameObject);
                 });
