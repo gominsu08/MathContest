@@ -78,7 +78,6 @@ public class EnemyTower : MonoBehaviour
 
     public void TowerBreak(bool isEnemy)
     {
-        CombatManager.Instance.GameEnd = true;
         StopAllCoroutines();
         if (isEnemy&&!CombatManager.Instance.GameEnd)
         {
@@ -90,6 +89,7 @@ public class EnemyTower : MonoBehaviour
         {
             _failPanel.SetActive(true);
         }
+        CombatManager.Instance.GameEnd = true;
     }
 
     public void ExitBtn()
