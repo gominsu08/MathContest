@@ -242,6 +242,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
     - target: {fileID: 2893052585035175589, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -331,6 +339,18 @@ PrefabInstance:
       value: StartBtn
       objectReference: {fileID: 0}
     - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.92929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.92929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 10.75
       objectReference: {fileID: 0}
@@ -406,6 +426,14 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
+    - target: {fileID: 581703444987497456, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
     - target: {fileID: 2893052585035175589, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -493,6 +521,18 @@ PrefabInstance:
     - target: {fileID: 8091092715061423454, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_Name
       value: ExitBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.92929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.92929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.92929
       objectReference: {fileID: 0}
     - target: {fileID: 8725081476146770475, guid: 66a681e9e6a571d4bac821ce06868136, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -128,8 +128,8 @@ public abstract class MiniGames : MonoBehaviour
 
     public IEnumerator Wait(Problem<string, string, bool> problem)
     {
-        yield return new WaitForSeconds(3f);
         setImage.GetTexture(problem.expression);
+        yield return null;
     }
 
     public IEnumerator Typing(bool isClear)
@@ -165,7 +165,7 @@ public abstract class MiniGames : MonoBehaviour
 
     public void SceneChanged()
     {
-        SceneManager.LoadScene("UpdgradeScene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void ReStart()

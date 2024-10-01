@@ -10,6 +10,8 @@ public class EscCanvers : MonoBehaviour
     private void Awake()
     {
         _escPanel = transform.GetComponentInChildren<EscPanel>();
+
+        _escPanel.Initailize();
     }
 
     private void Update()
