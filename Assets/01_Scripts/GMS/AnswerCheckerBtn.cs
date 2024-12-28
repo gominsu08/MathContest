@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public enum answerEnum
 {
@@ -12,6 +13,7 @@ public enum answerEnum
 
 public class AnswerCheckerBtn : MonoBehaviour
 {
+    [SerializeField] private RectTransform panel;
     [SerializeField] private AnswerCheck answerCheck;
     [SerializeField] private MiniGames miniGame;
     private TextMeshProUGUI text;
@@ -24,7 +26,7 @@ public class AnswerCheckerBtn : MonoBehaviour
 
     private void Awake()
     {
-        text = GetComponentInChildren   <TextMeshProUGUI>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     private void Start()
@@ -46,6 +48,7 @@ public class AnswerCheckerBtn : MonoBehaviour
 
     public void AnswerSet()
     {
+        panel.gameObject.SetActive(true);
         answerCheck.AnswerChecker(unAnswerText);
     }
 }
