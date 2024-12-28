@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TexDrawLib;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -29,7 +30,7 @@ public abstract class MiniGames : MonoBehaviour
     protected string answer; // 정답
     protected bool isGameClear; // 게임이 끝나면 true
 
-
+    [SerializeField] private TEXDraw _texDraw;
     
 
     protected virtual void Awake()
@@ -88,7 +89,7 @@ public abstract class MiniGames : MonoBehaviour
         currentProblemIndex = rand;
 
         
-        Problem<string, string, bool> problem = customProblemSO.problems[3];
+        Problem<string, string, bool> problem = customProblemSO.problems[rand];
 
         isHardProblem = problem.isIncludDesc;
 
@@ -113,6 +114,8 @@ public abstract class MiniGames : MonoBehaviour
         problemText.gameObject.SetActive(true);
         setImage.gameObject.SetActive(false);
 
+        
+
         problemText.SetText(problem.expression);
 
     }
@@ -128,7 +131,7 @@ public abstract class MiniGames : MonoBehaviour
 
     public IEnumerator Wait(Problem<string, string, bool> problem)
     {
-        setImage.GetTexture(problem.expression);
+        _texDraw.text = problem.expression;
         yield return null;
     }
 
