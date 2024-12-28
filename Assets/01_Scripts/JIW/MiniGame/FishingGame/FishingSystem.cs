@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Random = UnityEngine.Random;
+using Unity.VisualScripting;
 
 public class FishingSystem : MiniGames
 {
@@ -17,6 +18,8 @@ public class FishingSystem : MiniGames
     protected override void GameEnter()
     {
         base.GameEnter();
+        var a = Instantiate(fishPrefab);
+        a.Init(answer);
         for (int i = 0; i < answerCount; i++)
         {
             var answerFish = Instantiate(fishPrefab);
